@@ -116,9 +116,23 @@ console.log("Bot is running...");
 const app = express();
 app.use(bot.webhookCallback("/webhook")); // Set webhook endpoint
 
+// Root route for `/`
+app.get("/", (req, res) => {
+  res.send("Welcome to the Telegram Bot Server!");
+});
+
+// Other custom routes (optional)
+app.get("/status", (req, res) => {
+  res.send("Bot is running and healthy!");
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-bot.telegram.setWebhook(`${process.env.VERCEL_URL}/webhook`); // Set webhook URL
+try {
+  bot.telegram.setWebhook(`${process.env.VERCEL_URL}/webhook`);
+} catch (error) {
+  console.error("Error setting webhook:", error);
+} // Set webhook URL
