@@ -31,6 +31,8 @@ bot.start((ctx) => {
     ])
       .resize()
       .oneTime(false)
+
+    //to add menu command here
   );
 });
 
