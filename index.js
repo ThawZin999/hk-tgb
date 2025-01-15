@@ -3,7 +3,17 @@ const { Telegraf, Markup } = require("telegraf");
 // Replace with your bot token
 const BOT_TOKEN = "7563412608:AAE0DOyeU28hs-LjihHzLWFXpVfbd5KAyJ8";
 
-const bot = new Telegraf(BOT_TOKEN);
+const botToken = process.env.BOT_TOKEN;
+const bot = new Telegraf(botToken);
+
+//  Webhook setup
+const vercelUrl =
+  process.env.VERCEL_URL || "https://menu-bot-three.vercel.app/"; // Vercel URL provided after deployment
+bot.telegram.setWebhook(`https://${vercelUrl}/webhook`);
+bot.startWebhook("/webhook");
+
+// Set up webhook to listen on '/webhook'
+bot.startWebhook("/webhook");
 
 // Array of possible messages
 const messages = [
