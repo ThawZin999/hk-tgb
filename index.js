@@ -26,29 +26,41 @@ const messages = [
 // Handlers
 bot.start((ctx) => {
   ctx.reply(
-    "Welcome to the Menu Bot! Choose a category:",
+    "Welcome to the Menu Bot! Choose an option:",
     Markup.keyboard([
-      ["Menu 1", "Menu 2", "Random Message"],
+      ["Start", "Menu", "Random Message"], // Add "Menu" here to make it available
       ["Join Our Group", "Multiple Messages"],
-      ["Menu 3", "More Options"],
+      ["More Options"],
     ])
       .resize()
       .oneTime(false)
   );
-  bot.command("menu", (ctx) => {
-    ctx.reply("Choose a category:", {
-      reply_markup: {
-        inline_keyboard: [
-          [{ text: "Appetizers", callback_data: "category_appetizers" }],
-          [{ text: "Main Courses", callback_data: "category_main_courses" }],
-          [{ text: "Desserts", callback_data: "category_desserts" }],
-        ],
-      },
-    });
+});
+
+bot.command("menu", (ctx) => {
+  ctx.reply("Choose a category:", {
+    reply_markup: {
+      inline_keyboard: [
+        [{ text: "Appetizers", callback_data: "category_appetizers" }],
+        [{ text: "Main Courses", callback_data: "category_main_courses" }],
+        [{ text: "Desserts", callback_data: "category_desserts" }],
+      ],
+    },
   });
 });
 
 // Command to display the menu
+bot.hears("Menu", (ctx) => {
+  ctx.reply("Choose a category:", {
+    reply_markup: {
+      inline_keyboard: [
+        [{ text: "Appetizers", callback_data: "category_appetizers" }],
+        [{ text: "Main Courses", callback_data: "category_main_courses" }],
+        [{ text: "Desserts", callback_data: "category_desserts" }],
+      ],
+    },
+  });
+});
 
 // Action handlers for menu categories
 bot.action("category_appetizers", (ctx) => {
@@ -67,10 +79,7 @@ bot.action("category_desserts", (ctx) => {
 bot.hears("Menu 1", (ctx) => {
   ctx.reply(
     "You selected Menu 1! Here are your options:",
-    Markup.keyboard([
-      ["Option 1.1", "Option 1.2"], // Submenu for Menu 1
-      ["Back to Main Menu"],
-    ])
+    Markup.keyboard([["Option 1.1", "Option 1.2"], ["Back to Main Menu"]])
       .resize()
       .oneTime(false)
   );
