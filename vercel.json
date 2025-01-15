@@ -11,9 +11,5 @@
       "src": "/(.*)",
       "dest": "index.js"
     }
-  ],
-  "env": {
-    "BOT_TOKEN": "@bot_token",
-    "VERCEL_URL": "@vercel_url"
-  }
+  ]
 }
