@@ -9,8 +9,11 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 // Middleware for logging requests
 app.use(express.json());
 
-// Webhook route
-app.post("/webhook", bot.webhookCallback("/webhook"));
+// Webhook route with logging
+app.post("/webhook", (req, res) => {
+  console.log("Received a webhook event");
+  bot.webhookCallback("/webhook")(req, res);
+});
 
 const messages = [
   "Hello, this is message 1!",
@@ -31,8 +34,45 @@ bot.start((ctx) => {
     ])
       .resize()
       .oneTime(false)
+  );
+});
 
-    //to add menu command here
+// Command to display the menu
+bot.command("menu", (ctx) => {
+  ctx.reply("Choose a category:", {
+    reply_markup: {
+      inline_keyboard: [
+        [{ text: "Appetizers", callback_data: "category_appetizers" }],
+        [{ text: "Main Courses", callback_data: "category_main_courses" }],
+        [{ text: "Desserts", callback_data: "category_desserts" }],
+      ],
+    },
+  });
+});
+
+// Action handlers for menu categories
+bot.action("category_appetizers", (ctx) => {
+  ctx.reply("Appetizers Menu:\n1. Samosa - $5\n2. Pani Puri - $7");
+});
+
+bot.action("category_main_courses", (ctx) => {
+  ctx.reply("Main Courses Menu:\n1. Chicken Tikka - $12\n2. Biryani - $15");
+});
+
+bot.action("category_desserts", (ctx) => {
+  ctx.reply("Desserts Menu:\n1. Gulab Jamun - $4\n2. Kulfi - $5");
+});
+
+// Menu 1 handler
+bot.hears("Menu 1", (ctx) => {
+  ctx.reply(
+    "You selected Menu 1! Here are your options:",
+    Markup.keyboard([
+      ["Option 1.1", "Option 1.2"], // Submenu for Menu 1
+      ["Back to Main Menu"],
+    ])
+      .resize()
+      .oneTime(false)
   );
 });
 
@@ -65,6 +105,10 @@ bot.hears("Multiple Messages", async (ctx) => {
 async function setWebhookWithRetry() {
   try {
     if (process.env.VERCEL_URL) {
+      if (!/^https?:\/\//.test(process.env.VERCEL_URL)) {
+        console.error("VERCEL_URL must include 'https://' or 'http://'.");
+        return;
+      }
       await bot.telegram.setWebhook(`${process.env.VERCEL_URL}/webhook`);
       console.log("Webhook set successfully.");
     } else {
