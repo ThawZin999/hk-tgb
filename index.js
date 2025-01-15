@@ -35,20 +35,20 @@ bot.start((ctx) => {
       .resize()
       .oneTime(false)
   );
+  bot.command("menu", (ctx) => {
+    ctx.reply("Choose a category:", {
+      reply_markup: {
+        inline_keyboard: [
+          [{ text: "Appetizers", callback_data: "category_appetizers" }],
+          [{ text: "Main Courses", callback_data: "category_main_courses" }],
+          [{ text: "Desserts", callback_data: "category_desserts" }],
+        ],
+      },
+    });
+  });
 });
 
 // Command to display the menu
-bot.command("menu", (ctx) => {
-  ctx.reply("Choose a category:", {
-    reply_markup: {
-      inline_keyboard: [
-        [{ text: "Appetizers", callback_data: "category_appetizers" }],
-        [{ text: "Main Courses", callback_data: "category_main_courses" }],
-        [{ text: "Desserts", callback_data: "category_desserts" }],
-      ],
-    },
-  });
-});
 
 // Action handlers for menu categories
 bot.action("category_appetizers", (ctx) => {
