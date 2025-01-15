@@ -27,6 +27,11 @@ const messages = [
 bot.start((ctx) => {
   ctx.reply(
     "Welcome to the Menu Bot! Choose an option:",
+
+    Markup.inlineKeyboard([
+      [Markup.button.url("Join Group", "https://t.me/+zFqftnsFYnExOGU9")],
+    ]),
+
     Markup.keyboard([
       ["Start", "Menu", "Random Message"], // Add "Menu" here to make it available
       ["Join Our Group", "Multiple Messages"],
