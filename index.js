@@ -1,7 +1,8 @@
-require("dotenv").config();
-const { Telegraf, Markup } = require("telegraf");
-const express = require("express");
+import dotenv from "dotenv";
+import { Telegraf, Markup } from "telegraf";
+import express from "express";
 const app = express();
+dotenv.config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
