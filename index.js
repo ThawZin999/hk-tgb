@@ -5,7 +5,7 @@ const BOT_TOKEN = "7563412608:AAE0DOyeU28hs-LjihHzLWFXpVfbd5KAyJ8";
 
 const botToken = process.env.BOT_TOKEN;
 const bot = new Telegraf(botToken);
-
+//comments
 //  Webhook setup
 const vercelUrl =
   process.env.VERCEL_URL || "https://menu-bot-three.vercel.app/"; // Vercel URL provided after deployment
