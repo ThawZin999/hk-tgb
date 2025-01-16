@@ -25,16 +25,31 @@ const messages = [
 
 // Handlers
 bot.start((ctx) => {
+  // Send a welcome message with an inline keyboard
   ctx.reply(
-    "Welcome to the Menu Bot! Choose an option:",
-
+    "မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။",
     Markup.inlineKeyboard([
-      [Markup.button.url("Join Group", "https://t.me/+zFqftnsFYnExOGU9")],
-    ]),
+      [
+        Markup.button.url(
+          "Admin နှင့်တိုက်ရိုက်စကားပြောမည်",
+          "https://t.me/hikarujls"
+        ),
+      ],
+      [
+        Markup.button.url(
+          "သင်တန်စုံစမ်းရန်",
+          "https://m.me/hikarujapaneseschool"
+        ),
+      ],
+    ])
+  );
 
+  // Send the main menu with a reply keyboard
+  ctx.reply(
+    "Please choose an option below:",
     Markup.keyboard([
-      ["Start", "Menu", "Random Message"], // Add "Menu" here to make it available
-      ["Join Our Group", "Multiple Messages"],
+      ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", "Menu", "Random Message"],
+      ["Fileများ", "Multiple Messages"],
       ["More Options"],
     ])
       .resize()
@@ -55,16 +70,21 @@ bot.command("menu", (ctx) => {
 });
 
 // Command to display the menu
-bot.hears("Menu", (ctx) => {
-  ctx.reply("Choose a category:", {
-    reply_markup: {
-      inline_keyboard: [
-        [{ text: "Appetizers", callback_data: "category_appetizers" }],
-        [{ text: "Main Courses", callback_data: "category_main_courses" }],
-        [{ text: "Desserts", callback_data: "category_desserts" }],
-      ],
-    },
-  });
+bot.hears("Menu", async (ctx) => {
+  try {
+    await ctx.reply("Choose a category:", {
+      reply_markup: {
+        inline_keyboard: [
+          [{ text: "Appetizers", callback_data: "category_appetizers" }],
+          [{ text: "Main Courses", callback_data: "category_main_courses" }],
+          [{ text: "Desserts", callback_data: "category_desserts" }],
+        ],
+      },
+    });
+  } catch (error) {
+    console.error("Error handling 'Menu':", error);
+    ctx.reply("Sorry, something went wrong.");
+  }
 });
 
 // Action handlers for menu categories
@@ -81,7 +101,7 @@ bot.action("category_desserts", (ctx) => {
 });
 
 // Menu 1 handler
-bot.hears("Menu 1", (ctx) => {
+bot.hears("Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", (ctx) => {
   ctx.reply(
     "You selected Menu 1! Here are your options:",
     Markup.keyboard([["Option 1.1", "Option 1.2"], ["Back to Main Menu"]])
@@ -95,12 +115,74 @@ bot.hears("Random Message", (ctx) => {
   ctx.reply(randomMessage);
 });
 
-bot.hears("Join Our Group", (ctx) => {
+bot.hears("Fileများ", (ctx) => {
   ctx.reply(
-    "Click below to join our Telegram group:",
-    Markup.inlineKeyboard([
-      Markup.button.url("Join Group", "https://t.me/+zFqftnsFYnExOGU9"),
+    "Level ရွေးချယ်ပါ",
+    Markup.keyboard([
+      ["N5 Files", "N4 Files"],
+      ["N3 Files", "N2 Files"],
+      ["N1 Files", "Back"],
     ])
+      .resize()
+      .oneTime(false)
+  );
+});
+
+bot.hears("N5 Files", (ctx) => {
+  ctx.reply(
+    "👇 နှိပ်ပါ",
+    Markup.inlineKeyboard([
+      Markup.button.url("N5 Fileများ", "https://t.me/hikaruN5files"),
+    ])
+  );
+});
+
+bot.hears("N4 Files", (ctx) => {
+  ctx.reply(
+    "👇 နှိပ်ပါ",
+    Markup.inlineKeyboard([
+      Markup.button.url("N4 Fileများ", "https://t.me/hikaruN4files"),
+    ])
+  );
+});
+
+bot.hears("N3 Files", (ctx) => {
+  ctx.reply(
+    "👇 နှိပ်ပါ",
+    Markup.inlineKeyboard([
+      Markup.button.url("N3 Fileများ", "https://t.me/hikaruN3files"),
+    ])
+  );
+});
+
+bot.hears("N2 Files", (ctx) => {
+  ctx.reply(
+    "👇 နှိပ်ပါ",
+    Markup.inlineKeyboard([
+      Markup.button.url("N2 Fileများ", "https://t.me/hikaruN2files"),
+    ])
+  );
+});
+
+bot.hears("N1 Files", (ctx) => {
+  ctx.reply(
+    "👇 နှိပ်ပါ",
+    Markup.inlineKeyboard([
+      Markup.button.url("N1 Fileများ", "https://t.me/hikaruN1files"),
+    ])
+  );
+});
+
+bot.hears("Back", (ctx) => {
+  ctx.reply(
+    "Main Menu:",
+    Markup.keyboard([
+      ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", "Menu", "Random Message"],
+      ["Fileများ", "Multiple Messages"],
+      ["More Options"],
+    ])
+      .resize()
+      .oneTime(false)
   );
 });
 
