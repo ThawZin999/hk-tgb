@@ -27,6 +27,29 @@ export const setupCommands = (bot) => {
     });
   });
 
+  // Menu 1 handler
+  bot.hears("Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", (ctx) => {
+    ctx.reply(
+      "You selected Menu 1! Here are your options:",
+      Markup.keyboard([["Option 1.1", "Option 1.2"], ["Back"]])
+        .resize()
+        .oneTime(false)
+    );
+  });
+
+  bot.hears("Fileများရယူရန်", (ctx) => {
+    ctx.reply(
+      "Level ရွေးချယ်ပါ",
+      Markup.keyboard([
+        ["N5 Files", "N4 Files"],
+        ["N3 Files", "N2 Files"],
+        ["N1 Files", "Back"],
+      ])
+        .resize()
+        .oneTime(false)
+    );
+  });
+
   bot.hears("Random Message", (ctx) => {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     ctx.reply(randomMessage);
