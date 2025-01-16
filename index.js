@@ -56,9 +56,7 @@ bot.start((ctx) => {
   );
 
   // Send the main menu with a reply keyboard
-  ctx.reply("Main Menu", {
-    reply_markup: getMainMenu(),
-  });
+  ctx.reply("Main Menu:", getMainMenu());
 });
 
 bot.command("menu", (ctx) => {
