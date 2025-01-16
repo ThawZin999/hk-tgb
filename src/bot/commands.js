@@ -113,6 +113,7 @@ export const setupCommands = (bot) => {
 
   bot.hears("Video သင်ခန်းစာများလေ့လာရန်", (ctx) => {
     ctx.reply(
+      "Video Lessons",
       Markup.keyboard([
         ["N2 Shinkanzen Goi(Part 2)"],
         ["ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)"],
@@ -126,7 +127,9 @@ export const setupCommands = (bot) => {
 
   bot.hears("N2 Shinkanzen Goi(Part 2)", (ctx) => {
     ctx.reply(
-      "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+      Markup.url(
+        "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+      )
     );
   });
 
