@@ -135,7 +135,7 @@ export const setupCommands = (bot) => {
 
   bot.hears("N2 Shinkanzen Goi(Part 2)", (ctx) => {
     ctx.reply(
-      "",
+      "N2 Shinkanzen Goi(Part 2)",
       Markup.url(
         "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
       )
