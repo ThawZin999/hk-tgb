@@ -25,8 +25,9 @@ const messages = [
 
 const getMainMenu = () => {
   return Markup.keyboard([
-    ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", "Menu", "Random Message"],
-    ["Fileများ", "Multiple Messages"],
+    ["Hikaruမှဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ"],
+    ["Menu", "Random Message"],
+    ["Fileများရယူရန်", "Multiple Messages"],
     ["More Options"],
   ])
     .resize()
@@ -55,7 +56,7 @@ bot.start((ctx) => {
   );
 
   // Send the main menu with a reply keyboard
-  ctx.reply({
+  ctx.reply("Main Menu", {
     reply_markup: getMainMenu(),
   });
 });
@@ -118,7 +119,7 @@ bot.hears("Random Message", (ctx) => {
   ctx.reply(randomMessage);
 });
 
-bot.hears("Fileများ", (ctx) => {
+bot.hears("Fileများရယူရန်", (ctx) => {
   ctx.reply(
     "Level ရွေးချယ်ပါ",
     Markup.keyboard([
