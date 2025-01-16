@@ -111,6 +111,14 @@ export const setupCommands = (bot) => {
     ctx.reply(randomMessage);
   });
 
+  bot.hears("Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", (ctx) => {
+    ctx.reply(
+      "You selected Menu 1! Here are your options:",
+      Markup.keyboard([["Option 1.1", "Option 1.2"], ["Back"]])
+        .resize()
+        .oneTime(false)
+    );
+  });
   bot.hears("Video သင်ခန်းစာများလေ့လာရန်", (ctx) => {
     ctx.reply(
       "Video Lessons",
@@ -118,7 +126,7 @@ export const setupCommands = (bot) => {
         ["N2 Shinkanzen Goi(Part 2)"],
         ["ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)"],
         ["တိုခုတေး စားသောက်ဆိုင်"],
-        [["N4 Reading"], ["Back"]],
+        ["N4 Reading", "Back"],
       ])
         .resize()
         .oneTime(false)
