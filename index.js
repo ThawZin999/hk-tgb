@@ -23,9 +23,19 @@ const messages = [
   "Message 5: Stay awesome!",
 ];
 
+const getMainMenu = () => {
+  return Markup.keyboard([
+    ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", "Menu", "Random Message"],
+    ["Fileများ", "Multiple Messages"],
+    ["More Options"],
+  ])
+    .resize()
+    .oneTime(false);
+};
+
 // Handlers
+// Send a welcome message with an inline keyboard
 bot.start((ctx) => {
-  // Send a welcome message with an inline keyboard
   ctx.reply(
     "မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။",
     Markup.inlineKeyboard([
@@ -45,16 +55,9 @@ bot.start((ctx) => {
   );
 
   // Send the main menu with a reply keyboard
-  ctx.reply(
-    "Please choose an option below:",
-    Markup.keyboard([
-      ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", "Menu", "Random Message"],
-      ["Fileများ", "Multiple Messages"],
-      ["More Options"],
-    ])
-      .resize()
-      .oneTime(false)
-  );
+  ctx.reply({
+    reply_markup: getMainMenu(),
+  });
 });
 
 bot.command("menu", (ctx) => {
@@ -174,16 +177,7 @@ bot.hears("N1 Files", (ctx) => {
 });
 
 bot.hears("Back", (ctx) => {
-  ctx.reply(
-    "Main Menu:",
-    Markup.keyboard([
-      ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", "Menu", "Random Message"],
-      ["Fileများ", "Multiple Messages"],
-      ["More Options"],
-    ])
-      .resize()
-      .oneTime(false)
-  );
+  ctx.reply("Main Menu:", getMainMenu());
 });
 
 bot.hears("Multiple Messages", async (ctx) => {
