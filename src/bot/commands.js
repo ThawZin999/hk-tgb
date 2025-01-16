@@ -117,19 +117,18 @@ export const setupCommands = (bot) => {
         ["N2 Shinkanzen Goi(Part 2)"],
         ["ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)"],
         ["တိုခုတေး စားသောက်ဆိုင်"],
-        ["N4 Reading"]["Back"],
+        [["N4 Reading"], ["Back"]],
       ])
         .resize()
         .oneTime(false)
     );
   });
 
-  bot.hears("N2 Shinkanzen Goi(Part 2)"),
-    (ctx) => {
-      ctx.reply(
-        "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
-      );
-    };
+  bot.hears("N2 Shinkanzen Goi(Part 2)", (ctx) => {
+    ctx.reply(
+      "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+    );
+  });
 
   bot.hears("Back", (ctx) => {
     ctx.reply("Main Menu:", getMainMenu());
