@@ -50,12 +50,68 @@ export const setupCommands = (bot) => {
     );
   });
 
+  bot.hears("N5 Files", (ctx) => {
+    ctx.reply(
+      "👇 နှိပ်ပါ",
+      Markup.inlineKeyboard([
+        Markup.button.url("N5 Fileများ", "https://t.me/hikaruN5files"),
+      ])
+    );
+  });
+
+  bot.hears("N4 Files", (ctx) => {
+    ctx.reply(
+      "👇 နှိပ်ပါ",
+      Markup.inlineKeyboard([
+        Markup.button.url("N4 Fileများ", "https://t.me/hikaruN4files"),
+      ])
+    );
+  });
+
+  bot.hears("N3 Files", (ctx) => {
+    ctx.reply(
+      "👇 နှိပ်ပါ",
+      Markup.inlineKeyboard([
+        Markup.button.url("N3 Fileများ", "https://t.me/hikaruN3files"),
+      ])
+    );
+  });
+
+  bot.hears("N2 Files", (ctx) => {
+    ctx.reply(
+      "👇 နှိပ်ပါ",
+      Markup.inlineKeyboard([
+        Markup.button.url("N2 Fileများ", "https://t.me/hikaruN2files"),
+      ])
+    );
+  });
+
+  bot.hears("N1 Files", (ctx) => {
+    ctx.reply(
+      "👇 နှိပ်ပါ",
+      Markup.inlineKeyboard([
+        Markup.button.url("N1 Fileများ", "https://t.me/hikaruN1files"),
+      ])
+    );
+  });
+
+  bot.hears("Multiple Messages", async (ctx) => {
+    try {
+      await ctx.reply("Message 1: Hello, this is the first message!");
+      await ctx.reply("Message 2: Here’s some more information.");
+      await ctx.reply("Message 3: Let me know if you have questions.");
+    } catch (error) {
+      console.error("Error sending multiple messages:", error);
+      ctx.reply("Sorry, I could not send all the messages.");
+    }
+  });
+
   bot.hears("Random Message", (ctx) => {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     ctx.reply(randomMessage);
   });
 
   bot.hears("Back", (ctx) => {
-    ctx.reply("Main Menu:", { reply_markup: getMainMenu() });
+    ctx.reply("Main Menu:", getMainMenu());
   });
 };

@@ -2,7 +2,7 @@ import { Markup } from "telegraf";
 
 export const getMainMenu = () =>
   Markup.keyboard([
-    ["Hikaruမှဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ"],
+    ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ"],
     ["Menu", "Random Message"],
     ["Fileများရယူရန်", "Multiple Messages"],
     ["More Options"],

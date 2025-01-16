@@ -10,49 +10,4 @@ export const setupHandlers = (bot) => {
   bot.action("category_desserts", (ctx) => {
     ctx.reply("Desserts Menu:\n1. Gulab Jamun - $4\n2. Kulfi - $5");
   });
-
-  bot.hears("N5 Files", (ctx) => {
-    ctx.reply(
-      "👇 နှိပ်ပါ",
-      Markup.inlineKeyboard([
-        Markup.button.url("N5 Fileများ", "https://t.me/hikaruN5files"),
-      ])
-    );
-  });
-
-  bot.hears("N4 Files", (ctx) => {
-    ctx.reply(
-      "👇 နှိပ်ပါ",
-      Markup.inlineKeyboard([
-        Markup.button.url("N4 Fileများ", "https://t.me/hikaruN4files"),
-      ])
-    );
-  });
-
-  bot.hears("N3 Files", (ctx) => {
-    ctx.reply(
-      "👇 နှိပ်ပါ",
-      Markup.inlineKeyboard([
-        Markup.button.url("N3 Fileများ", "https://t.me/hikaruN3files"),
-      ])
-    );
-  });
-
-  bot.hears("N2 Files", (ctx) => {
-    ctx.reply(
-      "👇 နှိပ်ပါ",
-      Markup.inlineKeyboard([
-        Markup.button.url("N2 Fileများ", "https://t.me/hikaruN2files"),
-      ])
-    );
-  });
-
-  bot.hears("N1 Files", (ctx) => {
-    ctx.reply(
-      "👇 နှိပ်ပါ",
-      Markup.inlineKeyboard([
-        Markup.button.url("N1 Fileများ", "https://t.me/hikaruN1files"),
-      ])
-    );
-  });
 };
