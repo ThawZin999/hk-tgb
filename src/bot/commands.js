@@ -152,6 +152,7 @@ export const setupCommands = (bot) => {
 
   bot.hears("Video Direct Link", (ctx) => {
     ctx.reply(
+      "👇 ရွေးချယ်ပါ",
       Markup.inlineKeyboard([
         Markup.button.url(
           "ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)",
