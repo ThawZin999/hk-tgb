@@ -16,6 +16,10 @@ export const setupCommands = (bot) => {
     ctx.reply("Main Menu", getMainMenu());
   });
 
+  function escapeMarkdownV2(text) {
+    return text.replace(/([_*[\]()~`>#+-=|{}.!])/g, "\\$1");
+  }
+
   bot.hears("Menu", (ctx) => {
     ctx.reply("Choose a category:", {
       reply_markup: {
@@ -147,7 +151,7 @@ export const setupCommands = (bot) => {
   bot.hears("N5 1", (ctx) => {
     ctx.reply(n5Kotoba.join("\n"));
     ctx.reply(
-      "📝",
+      "📝❓",
       Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false)
     );
   });
@@ -155,7 +159,10 @@ export const setupCommands = (bot) => {
   bot.hears("N5 Quiz", (ctx) => {
     const randomN5Kotoba =
       n5Kotoba[Math.floor(Math.random() * n5Kotoba.length)];
-    const spoilerMessage = randomN5Kotoba.replace(/(.*\n.*\n)(.*)/, "$1||$2||");
+    const spoilerMessage = randomN5Kotoba.replace(
+      /(.*\n.*\n)(.*)/,
+      (match, p1, p2) => `${escapeMarkdownV2(p1)}||${escapeMarkdownV2(p2)}||`
+    );
     ctx.replyWithMarkdownV2(spoilerMessage);
   });
 
