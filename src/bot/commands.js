@@ -135,12 +135,12 @@ export const setupCommands = (bot) => {
   });
   bot.hears("ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)", (ctx) => {
     ctx.reply(
-      "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+      "https://youtube.com/playlist?list=PL52UIvGzlVBrMNAH3oUCA_zPi4bZaq8Jj&si=LnttWTuJ6VNo9Cth"
     );
   });
   bot.hears("တိုခုတေး စားသောက်ဆိုင်", (ctx) => {
     ctx.reply(
-      "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+      "https://youtube.com/playlist?list=PL52UIvGzlVBrzzVU8fhd_naMvGW1yObCP&si=ul48RC_uCSJpOdor"
     );
   });
   bot.hears("N4 Reading", (ctx) => {
@@ -156,7 +156,11 @@ export const setupCommands = (bot) => {
       Markup.inlineKeyboard([
         Markup.button.url(
           "ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)",
-          "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+          "https://youtube.com/playlist?list=PL52UIvGzlVBrMNAH3oUCA_zPi4bZaq8Jj&si=LnttWTuJ6VNo9Cth"
+        ),
+        Markup.button.url(
+          "တိုခုတေး စားသောက်ဆိုင်",
+          "https://youtube.com/playlist?list=PL52UIvGzlVBrzzVU8fhd_naMvGW1yObCP&si=ul48RC_uCSJpOdor"
         ),
       ])
     );
