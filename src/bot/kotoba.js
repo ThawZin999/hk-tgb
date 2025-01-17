@@ -193,6 +193,7 @@ export const n5Kotoba = [
   burajiru
   ဘရာဇီး
     `,
+  ` Quizဖြေရန်အတွက် သက်ဆိုင်ရာQuizကိုထပ်ခါထပ်ခါနှိပ်သွားပါ။`,
 ];
 
 export const n4Kotoba = [];
