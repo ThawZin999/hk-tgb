@@ -5,6 +5,7 @@ export const getMainMenu = () =>
     ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ"],
     ["Menu", "Random Message"],
     ["Fileများရယူရန်", "Multiple Messages"],
+    ["Kotobaများကျက်ရန်"],
     ["Video သင်ခန်းစာများလေ့လာရန်"],
   ])
     .resize()

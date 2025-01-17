@@ -1,5 +1,6 @@
 import { getMainMenu, getInlineKeyboard } from "./menus.js";
 import { Markup } from "telegraf";
+import { n5Kotoba, n4Kotoba } from "./kotoba.js";
 
 const messages = [
   "Hello, this is message 1!",
@@ -113,6 +114,47 @@ export const setupCommands = (bot) => {
     ctx.reply(randomMessage);
   });
 
+  bot.hears("Kotobaများကျက်ရန်", (ctx) => {
+    ctx.reply(
+      "Choose a category:",
+      Markup.keyboard([
+        ["N5 Kotoba", "N4 Kotoba"],
+        ["N3 Kotoba", "N2 Kotoba"],
+        ["N1 Kotoba", "Back"],
+      ])
+        .resize()
+        .oneTime(false)
+    );
+  });
+
+  bot.hears("N5 Kotoba", (ctx) => {
+    ctx.reply(
+      "Level ရွေးချယ်ပါ",
+      Markup.keyboard([
+        ["N5 1", "N5 2", "N5 3"],
+        ["N5 4", "N5 5", "N5 6"],
+        ["N5 7", "N5 8", "N5 9"],
+        ["N5 10", "N5 11", "N5 12"],
+        ["N5 13", "N5 14", "N5 15"],
+        ["N5 16", "N5 17", "N5 18"],
+        ["N5 19", "N5 20", "N5 21"],
+        ["N5 22", "N5 23", "N5 24"],
+        ["N5 25", "Back"],
+      ])
+    );
+  });
+
+  bot.hears("N5 1", (ctx) => {
+    ctx.reply(n5Kotoba.join("\n"));
+    ctx.reply(Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false));
+  });
+
+  bot.hears("N5 Quiz", (ctx) => {
+    const randomN5Kotoba =
+      n5Kotoba[Math.floor(Math.random() * messages.length)];
+    ctx.reply(randomN5Kotoba);
+  });
+
   //Videos
   // bot.hears("Video သင်ခန်းစာများလေ့လာရန်", (ctx) => {
   //   ctx.reply(
@@ -150,6 +192,7 @@ export const setupCommands = (bot) => {
   // });
   //Videos
 
+  //videos
   bot.hears("Video သင်ခန်းစာများလေ့လာရန်", (ctx) => {
     ctx.reply(
       "👇 ရွေးချယ်ပါ",
@@ -181,6 +224,7 @@ export const setupCommands = (bot) => {
       ])
     );
   });
+  //videos
 
   bot.hears("Back", (ctx) => {
     ctx.reply("Main Menu:", getMainMenu());
