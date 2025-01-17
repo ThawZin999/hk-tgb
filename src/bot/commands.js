@@ -146,7 +146,7 @@ export const setupCommands = (bot) => {
 
   bot.hears("N5 1", (ctx) => {
     ctx.reply(n5Kotoba.join("\n"));
-    ctx.reply(Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false));
+    ctx.reply("", Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false));
   });
 
   bot.hears("N5 Quiz", (ctx) => {
