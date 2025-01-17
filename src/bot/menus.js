@@ -6,6 +6,7 @@ export const getMainMenu = () =>
     ["Menu", "Random Message"],
     ["Fileများရယူရန်", "Multiple Messages"],
     ["Video သင်ခန်းစာများလေ့လာရန်"],
+    ["Video Direct Link"],
   ])
     .resize()
     .oneTime(false);

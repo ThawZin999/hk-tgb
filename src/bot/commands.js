@@ -37,6 +37,7 @@ export const setupCommands = (bot) => {
     );
   });
 
+  //Files
   bot.hears("Fileများရယူရန်", (ctx) => {
     ctx.reply(
       "Level ရွေးချယ်ပါ",
@@ -94,6 +95,7 @@ export const setupCommands = (bot) => {
       ])
     );
   });
+  //Files
 
   bot.hears("Multiple Messages", async (ctx) => {
     try {
@@ -111,21 +113,14 @@ export const setupCommands = (bot) => {
     ctx.reply(randomMessage);
   });
 
-  bot.hears("Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", (ctx) => {
-    ctx.reply(
-      "You selected Menu 1! Here are your options:",
-      Markup.keyboard([["Option 1.1", "Option 1.2"], ["Back"]])
-        .resize()
-        .oneTime(false)
-    );
-  });
+  //Videos
   bot.hears("Video သင်ခန်းစာများလေ့လာရန်", (ctx) => {
     ctx.reply(
       "Video Lessons",
       Markup.keyboard([
+        ["တိုခုတေး စားသောက်ဆိုင်"],
         ["N2 Shinkanzen Goi(Part 2)"],
         ["ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)"],
-        ["တိုခုတေး စားသောက်ဆိုင်"],
         ["N4 Reading", "Back"],
       ])
         .resize()
@@ -136,6 +131,32 @@ export const setupCommands = (bot) => {
   bot.hears("N2 Shinkanzen Goi(Part 2)", (ctx) => {
     ctx.reply(
       "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+    );
+  });
+  bot.hears("ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)", (ctx) => {
+    ctx.reply(
+      "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+    );
+  });
+  bot.hears("တိုခုတေး စားသောက်ဆိုင်", (ctx) => {
+    ctx.reply(
+      "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+    );
+  });
+  bot.hears("N4 Reading", (ctx) => {
+    ctx.reply(
+      "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+    );
+  });
+  //Videos
+
+  bot.hears("Video Direct Link", (ctx) => {
+    ctx.reply(
+      Markup.inlineKeyboard([
+        Markup.button.url(
+          "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
+        ),
+      ])
     );
   });
 
