@@ -146,7 +146,10 @@ export const setupCommands = (bot) => {
 
   bot.hears("N5 1", (ctx) => {
     ctx.reply(n5Kotoba.join("\n"));
-    ctx.reply(Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false));
+    ctx.reply(
+      "Quiz ‌ဖြေရန်အတွက် သက်ဆိုင်ရာ Quiz ကို ထပ်ခါထပ်ခါနှိပ်သွားပါ။",
+      Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false)
+    );
   });
 
   bot.hears("N5 Quiz", (ctx) => {
