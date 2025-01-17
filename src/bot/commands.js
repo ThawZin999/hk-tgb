@@ -144,8 +144,10 @@ export const setupCommands = (bot) => {
     );
   });
 
-  bot.hears("N5 1", (ctx) => {
-    ctx.reply(n5Kotoba.join("\n"));
+  bot.hears("N5 1", async (ctx) => {
+    for (const message of n5Kotoba) {
+      await ctx.reply(message);
+    }
     ctx.reply(
       "Quiz ‌ဖြေရန်အတွက် သက်ဆိုင်ရာ Quiz ကို ထပ်ခါထပ်ခါနှိပ်သွားပါ။",
       Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false)
