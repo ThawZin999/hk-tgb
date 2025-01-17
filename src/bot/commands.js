@@ -154,6 +154,7 @@ export const setupCommands = (bot) => {
     ctx.reply(
       Markup.inlineKeyboard([
         Markup.button.url(
+          "ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)",
           "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
         ),
       ])
