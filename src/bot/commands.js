@@ -139,15 +139,32 @@ export const setupCommands = (bot) => {
     ctx.reply(
       "Level ရွေးချယ်ပါ",
       Markup.keyboard([
-        ["N5 1", "N5 2", "N5 3"],
-        ["N5 4", "N5 5", "N5 6"],
-        ["N5 7", "N5 8", "N5 9"],
-        ["N5 10", "N5 11", "N5 12"],
-        ["N5 13", "N5 14", "N5 15"],
-        ["N5 16", "N5 17", "N5 18"],
-        ["N5 19", "N5 20", "N5 21"],
-        ["N5 22", "N5 23", "N5 24"],
-        ["N5 25", "Back"],
+        ["N5 1", "N5 1 Quiz"],
+        ["N5 2", "N5 2 Quiz"],
+        ["N5 3", "N5 3 Quiz"],
+        ["N5 4", "N5 4 Quiz"],
+        ["N5 5", "N5 5 Quiz"],
+        ["N5 6", "N5 6 Quiz"],
+        ["N5 7", "N5 7 Quiz"],
+        ["N5 8", "N5 8 Quiz"],
+        ["N5 9", "N5 9 Quiz"],
+        ["N5 10", "N5 10 Quiz"],
+        ["N5 11", "N5 11 Quiz"],
+        ["N5 12", "N5 12 Quiz"],
+        ["N5 13", "N5 13 Quiz"],
+        ["N5 14", "N5 14 Quiz"],
+        ["N5 15", "N5 15 Quiz"],
+        ["N5 16", "N5 16 Quiz"],
+        ["N5 17", "N5 17 Quiz"],
+        ["N5 18", "N5 18 Quiz"],
+        ["N5 19", "N5 19 Quiz"],
+        ["N5 20", "N5 20 Quiz"],
+        ["N5 21", "N5 21 Quiz"],
+        ["N5 22", "N5 22 Quiz"],
+        ["N5 23", "N5 23 Quiz"],
+        ["N5 24", "N5 24 Quiz"],
+        ["N5 25", "N5 25 Quiz"],
+        ["Back"],
       ])
     );
   });
@@ -155,13 +172,9 @@ export const setupCommands = (bot) => {
   bot.hears("N5 1", (ctx) => {
     const message = n5Kotoba.map(removePipes).join("\n");
     ctx.reply(message);
-    ctx.reply(
-      "N5 1",
-      Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false)
-    );
   });
 
-  bot.hears("N5 Quiz", (ctx) => {
+  bot.hears("N5 1 Quiz", (ctx) => {
     const randomN5Kotoba =
       n5Kotoba[Math.floor(Math.random() * n5Kotoba.length)];
     const escapedMessage = escapeMarkdownV2(randomN5Kotoba);
