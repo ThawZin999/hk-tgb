@@ -264,12 +264,12 @@ export const setupCommands = (bot) => {
   });
   //videos
 
-  bot.on("message", (ctx) => {
-    const chatId = ctx.message.chat.id; // Get the chat ID of the current chat
-    const messageId = ctx.message.message_id; // Get the message ID of the current message
+  // bot.on("message", (ctx) => {
+  //   const chatId = ctx.message.chat.id; // Get the chat ID of the current chat
+  //   const messageId = ctx.message.message_id; // Get the message ID of the current message
 
-    ctx.reply(`Chat ID: ${chatId}\nMessage ID: ${messageId}`); // Logs full message details to the console
-  });
+  //   ctx.reply(`Chat ID: ${chatId}\nMessage ID: ${messageId}`); // Logs full message details to the console
+  // });
 
   bot.action("Forward Message", async (ctx) => {
     const chatId = ctx.chat.id; // The user's chat ID
@@ -277,8 +277,8 @@ export const setupCommands = (bot) => {
 
     try {
       // Forward a message from your saved messages chat to the user
-      await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, 2408); // Replace 2408 with the actual message ID
-      await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, 2410); // Replace 2410 with the actual message ID
+      await ctx.telegram.forwardMessage(chatId, 5974036353, 2471); // Replace 2408 with the actual message ID
+      await ctx.telegram.forwardMessage(chatId, 5974036353, 2473); // Replace 2410 with the actual message ID
 
       ctx.reply("Messages have been forwarded!");
     } catch (error) {
