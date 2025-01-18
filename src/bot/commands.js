@@ -265,13 +265,11 @@ export const setupCommands = (bot) => {
   //videos
 
   bot.on("message", (ctx) => {
-    if (ctx.message.forward_from_chat && ctx.message.forward_from_message_id) {
+    if (ctx.message.forward_from_chat) {
       const sourceChatId = ctx.message.forward_from_chat.id;
-      const sourceMessageId = ctx.message.forward_from_message_id;
+      // const sourceMessageId = ctx.message.forward_from_message_id;
 
-      ctx.reply(
-        `Source Chat ID: ${sourceChatId}\nSource Message ID: ${sourceMessageId}`
-      );
+      ctx.reply(`Source Chat ID: ${sourceChatId}`);
     } else {
       ctx.reply("This message is not forwarded.");
     }
