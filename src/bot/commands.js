@@ -3,7 +3,7 @@ import { Markup } from "telegraf";
 import { n5Kotoba, n4Kotoba, n5KotobaQuiz } from "./kotoba.js";
 
 function escapeMarkdownV2(text) {
-  return text.replace(/([_*[\]()~`>#+-=|{}.!])/g, "\\$1");
+  return text.replace(/([_*[\]()~`>#+-={}.!])/g, "\\$1");
 }
 
 const messages = [
@@ -164,27 +164,10 @@ export const setupCommands = (bot) => {
   // });
 
   bot.hears("N5 Quiz", (ctx) => {
-    const test = [
-      `
-    ||わたし||
-    watashi
-    ကျွန်ုပ်၊ကျွန်တော်/ကျွန်မ
-      `,
-      `
-    ||あなた||
-    anata
-    သင်၊ခင်ဗျား၊ရှင်
-      `,
-      `
-    \\~||さん||
-    san
-    ဦး\\~၊ဒေါ်\\~
-    ( ယဉ်ကျေးမှုကိုဖော်ပြသောအားဖြင့်အမည်များ၏နောက်တွင်ထည့်၍သုံးသောနောက်ဆက် ) `,
-    ];
-
-    const randomN5Kotoba = test[Math.floor(Math.random() * test.length)];
-    // const escapedMessage = escapeMarkdownV2(Hello);
-    ctx.replyWithMarkdownV2(randomN5Kotoba);
+    const randomN5Kotoba =
+      n5KotobaQuiz[Math.floor(Math.random() * n5KotobaQuiz.length)];
+    const escapedMessage = escapeMarkdownV2(randomN5Kotoba);
+    ctx.replyWithMarkdownV2(escapedMessage);
   });
 
   //Videos
