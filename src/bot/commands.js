@@ -6,6 +6,10 @@ function escapeMarkdownV2(text) {
   return text.replace(/([_*[\]()~`>#+-={}.!])/g, "\\$1");
 }
 
+function removePipes(text) {
+  return text.replace(/\|\|/g, "");
+}
+
 const messages = [
   "Hello, this is message 1!",
   "Greetings from message 2!",
@@ -151,7 +155,10 @@ export const setupCommands = (bot) => {
   bot.hears("N5 1", (ctx) => {
     const message = n5Kotoba.map(removePipes).join("\n");
     ctx.reply(message);
-    ctx.reply(Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false));
+    ctx.reply(
+      "N5 1",
+      Markup.keyboard(["N5 Quiz", "Back"]).resize().oneTime(false)
+    );
   });
 
   bot.hears("N5 Quiz", (ctx) => {
