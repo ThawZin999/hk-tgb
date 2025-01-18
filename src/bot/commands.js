@@ -264,6 +264,19 @@ export const setupCommands = (bot) => {
   });
   //videos
 
+  bot.on("message", (ctx) => {
+    if (ctx.message.forward_from_chat && ctx.message.forward_from_message_id) {
+      const sourceChatId = ctx.message.forward_from_chat.id;
+      const sourceMessageId = ctx.message.forward_from_message_id;
+
+      ctx.reply(
+        `Source Chat ID: ${sourceChatId}\nSource Message ID: ${sourceMessageId}`
+      );
+    } else {
+      ctx.reply("This message is not forwarded.");
+    }
+  });
+
   bot.hears("Get Id", (ctx) => {
     const chatId = ctx.message.chat.id; // Get the chat ID of the current chat
     const messageId = ctx.message.message_id; // Get the message ID of the current message
