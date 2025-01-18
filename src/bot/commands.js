@@ -1,6 +1,6 @@
 import { getMainMenu, getInlineKeyboard } from "./menus.js";
 import { Markup } from "telegraf";
-import { n5Kotoba, n4Kotoba } from "./kotoba.js";
+import { n5Kotoba, n4Kotoba, n5KotobaQuiz } from "./kotoba.js";
 
 const messages = [
   "Hello, this is message 1!",
@@ -15,10 +15,6 @@ export const setupCommands = (bot) => {
     ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။", getInlineKeyboard());
     ctx.reply("Main Menu", getMainMenu());
   });
-
-  function escapeMarkdownV2(text) {
-    return text.replace(/([_*[\]()~`>#+-=|{}.!])/g, "\\$1");
-  }
 
   bot.hears("Menu", (ctx) => {
     ctx.reply("Choose a category:", {
@@ -158,12 +154,9 @@ export const setupCommands = (bot) => {
 
   bot.hears("N5 Quiz", (ctx) => {
     const randomN5Kotoba =
-      n5Kotoba[Math.floor(Math.random() * n5Kotoba.length)];
-    const spoilerMessage = randomN5Kotoba.replace(
-      /(.*\n)(.*\n)(.*)/,
-      (match, p1, p2, p3) => `||${escapeMarkdownV2(p1)}||\n${p2}\n${p3}`
-    );
-    ctx.replyWithMarkdownV2(spoilerMessage);
+      n5KotobaQuiz[Math.floor(Math.random() * n5KotobaQuiz.length)];
+    const escapedMessage = escapeMarkdownV2(randomN5Kotoba);
+    ctx.replyWithMarkdownV2(escapedMessage);
   });
 
   //Videos
