@@ -124,7 +124,7 @@ export const setupCommands = (bot) => {
 
   bot.hears("Kotobaများကျက်ရန်", (ctx) => {
     ctx.reply(
-      "Choose a category:",
+      "Level ရွေးချယ်ပါ",
       Markup.keyboard([
         ["N5 Kotoba", "N4 Kotoba"],
         ["N3 Kotoba", "N2 Kotoba"],
@@ -137,7 +137,7 @@ export const setupCommands = (bot) => {
 
   bot.hears("N5 Kotoba", (ctx) => {
     ctx.reply(
-      "Unit 1 Kotoba ကျက်ရန်အတွက် N5 1 ကိုရွေးချယ်ပါ။ Quizဖြေရန်အတွက် N5 1 Quizကိုထပ်ခါထပ်ခါနှိပ်သွားပါ။",
+      "ဉပမာ-Unit 1 Kotobaကျက်ရန်အတွက်N5 1ကိုရွေးချယ်ပါ။ Quizဖြေရန်အတွက် N5 1 Quizကိုထပ်ခါထပ်ခါနှိပ်သွားပါ။",
       Markup.keyboard([
         ["N5 1", "N5 1 Quiz"],
         ["N5 2", "N5 2 Quiz"],
@@ -263,6 +263,14 @@ export const setupCommands = (bot) => {
     );
   });
   //videos
+
+  bot.hears("Get Id", (ctx) => {
+    const chatId = ctx.message.chat.id; // Get the chat ID of the current chat
+    const messageId = ctx.message.message_id; // Get the message ID of the current message
+
+    // Forward the message to the same chat (you can change the chat ID to forward to a different chat)
+    ctx.forwardMessage(chatId, chatId, messageId);
+  });
 
   bot.hears("Back", (ctx) => {
     ctx.reply("Main Menu:", getMainMenu());
