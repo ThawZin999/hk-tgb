@@ -269,7 +269,7 @@ export const setupCommands = (bot) => {
     const messageId = ctx.message.message_id; // Get the message ID of the current message
 
     // Forward the message to the same chat (you can change the chat ID to forward to a different chat)
-    ctx.forwardMessage(chatId, chatId, messageId);
+    ctx.reply(`Chat ID: ${chatId}\nMessage ID: ${messageId}`);
   });
 
   bot.hears("Back", (ctx) => {
