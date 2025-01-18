@@ -161,10 +161,7 @@ export const setupCommands = (bot) => {
       n5Kotoba[Math.floor(Math.random() * n5Kotoba.length)];
     const spoilerMessage = randomN5Kotoba.replace(
       /(.*\n)(.*\n)(.*)/,
-      (match, p1, p2, p3) =>
-        `||${escapeMarkdownV2(p1)}||\n${escapeMarkdownV2(
-          p2
-        )}\n${escapeMarkdownV2(p3)}`
+      (match, p1, p2, p3) => `||${escapeMarkdownV2(p1)}||\n${p2}\n${p3}`
     );
     ctx.replyWithMarkdownV2(spoilerMessage);
   });
