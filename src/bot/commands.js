@@ -2,6 +2,10 @@ import { getMainMenu, getInlineKeyboard } from "./menus.js";
 import { Markup } from "telegraf";
 import { n5Kotoba, n4Kotoba, n5KotobaQuiz } from "./kotoba.js";
 
+function escapeMarkdownV2(text) {
+  return text.replace(/([_*[\]()~`>#+-=|{}.!])/g, "\\$1");
+}
+
 const messages = [
   "Hello, this is message 1!",
   "Greetings from message 2!",
