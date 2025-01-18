@@ -164,10 +164,22 @@ export const setupCommands = (bot) => {
   // });
 
   bot.hears("N5 Quiz", (ctx) => {
-    const test = "Hello ||World||";
-    // const randomN5Kotoba = n5KotobaQuiz[Math.floor(Math.random() * n5KotobaQuiz.length)];
+    const test = [
+      `
+    ||わたし||
+    watashi
+    ကျွန်ုပ်၊ကျွန်တော်/ကျွန်မ
+      `,
+      `
+    ||あなた||
+    anata
+    သင်၊ခင်ဗျား၊ရှင်
+      `,
+    ];
+
+    const randomN5Kotoba = test[Math.floor(Math.random() * test.length)];
     // const escapedMessage = escapeMarkdownV2(Hello);
-    ctx.replyWithMarkdownV2(test);
+    ctx.replyWithMarkdownV2(randomN5Kotoba);
   });
 
   //Videos
