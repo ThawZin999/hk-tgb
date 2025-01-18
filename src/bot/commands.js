@@ -271,12 +271,20 @@ export const setupCommands = (bot) => {
     ctx.reply(`Chat ID: ${chatId}\nMessage ID: ${messageId}`); // Logs full message details to the console
   });
 
-  bot.hears("Get Id", (ctx) => {
-    const chatId = ctx.message.chat.id; // Get the chat ID of the current chat
-    const messageId = ctx.message.message_id; // Get the message ID of the current message
+  bot.action("Get Id", async (ctx) => {
+    const chatId = ctx.chat.id; // The user's chat ID
+    const savedMessagesChatId = ctx.botInfo.id; // Your bot's ID (represents "Saved Messages")
 
-    // Forward the message to the same chat (you can change the chat ID to forward to a different chat)
-    ctx.reply(`Chat ID: ${chatId}\nMessage ID: ${messageId}`);
+    try {
+      // Forward a message from your saved messages chat to the user
+      await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, 2408);
+      await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, 2410);
+
+      ctx.reply("Messages have been forwarded!");
+    } catch (error) {
+      console.error("Error forwarding messages:", error);
+      ctx.reply("Failed to forward messages. Please try again later.");
+    }
   });
 
   bot.hears("Back", (ctx) => {
