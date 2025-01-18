@@ -137,7 +137,7 @@ export const setupCommands = (bot) => {
 
   bot.hears("N5 Kotoba", (ctx) => {
     ctx.reply(
-      "Level ရွေးချယ်ပါ",
+      "Unit 1 Kotoba ကျက်ရန်အတွက် N5 1 ကိုရွေးချယ်ပါ။ Quizဖြေရန်အတွက် N5 1 Quizကိုထပ်ခါထပ်ခါနှိပ်သွားပါ။",
       Markup.keyboard([
         ["N5 1", "N5 1 Quiz"],
         ["N5 2", "N5 2 Quiz"],
