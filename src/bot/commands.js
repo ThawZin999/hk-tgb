@@ -265,7 +265,7 @@ export const setupCommands = (bot) => {
   //videos
 
   bot.on("message", (ctx) => {
-    console.log(ctx.message); // Logs full message details to the console
+    ctx.reply("Message:", ctx.message); // Logs full message details to the console
   });
 
   bot.hears("Get Id", (ctx) => {
