@@ -175,6 +175,12 @@ export const setupCommands = (bot) => {
     anata
     သင်၊ခင်ဗျား၊ရှင်
       `,
+      `
+    ||〜さん||
+      san
+      ဦး~၊ဒေါ်~
+      (ယဉ်ကျေးမှုကိုဖော်ပြသောအားဖြင့်အမည်များ၏နောက်တွင်ထည့်၍သုံးသောနောက်ဆက်)
+        `,
     ];
 
     const randomN5Kotoba = test[Math.floor(Math.random() * test.length)];
