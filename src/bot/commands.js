@@ -156,12 +156,12 @@ export const setupCommands = (bot) => {
     );
   });
 
-  bot.hears("N5 Quiz", (ctx) => {
-    const randomN5Kotoba =
-      n5KotobaQuiz[Math.floor(Math.random() * n5KotobaQuiz.length)];
-    const escapedMessage = escapeMarkdownV2(randomN5Kotoba);
-    ctx.replyWithMarkdownV2(escapedMessage);
-  });
+  // bot.hears("N5 Quiz", (ctx) => {
+  //   const randomN5Kotoba =
+  //     n5KotobaQuiz[Math.floor(Math.random() * n5KotobaQuiz.length)];
+  //   const escapedMessage = escapeMarkdownV2(randomN5Kotoba);
+  //   ctx.replyWithMarkdownV2(escapedMessage);
+  // });
 
   bot.hears("N5 Quiz", (ctx) => {
     const test = "Hello ||World||";
