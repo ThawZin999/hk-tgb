@@ -1,6 +1,6 @@
 import { getMainMenu, getInlineKeyboard } from "./menus.js";
 import { Markup } from "telegraf";
-import { n5Kotoba, n4Kotoba } from "./kotoba.js";
+import { n5Kotoba1, n5Kotoba2 } from "./kotoba.js";
 
 function escapeMarkdownV2(text) {
   return text.replace(/([_*[\]()~`>#+-={}.!])/g, "\\$1");
@@ -170,13 +170,25 @@ export const setupCommands = (bot) => {
   });
 
   bot.hears("N5 1", (ctx) => {
-    const message = n5Kotoba.map(removePipes).join("\n");
+    const message = n5Kotoba1.map(removePipes).join("\n");
     ctx.reply(message);
   });
 
   bot.hears("N5 1 Quiz", (ctx) => {
     const randomN5Kotoba =
-      n5Kotoba[Math.floor(Math.random() * n5Kotoba.length)];
+      n5Kotoba1[Math.floor(Math.random() * n5Kotoba1.length)];
+    const escapedMessage = escapeMarkdownV2(randomN5Kotoba);
+    ctx.replyWithMarkdownV2(escapedMessage);
+  });
+
+  bot.hears("N5 2", (ctx) => {
+    const message = n5Kotoba2.map(removePipes).join("\n");
+    ctx.reply(message);
+  });
+
+  bot.hears("N5 2 Quiz", (ctx) => {
+    const randomN5Kotoba =
+      n5Kotoba2[Math.floor(Math.random() * n5Kotoba2.length)];
     const escapedMessage = escapeMarkdownV2(randomN5Kotoba);
     ctx.replyWithMarkdownV2(escapedMessage);
   });
