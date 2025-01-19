@@ -265,8 +265,8 @@ export const setupCommands = (bot) => {
   //videos
 
   bot.on("message", (ctx) => {
-    const messageId = ctx.message.chat.id; // Original message ID
-    ctx.reply(`Original Message ID: ${messageId}`);
+    ctx.reply(`Message ID: ${ctx.message.message_id}`);
+    ctx.reply(`Forwarded From: ${ctx.message.forward_from_chat.id}`);
   });
 
   bot.action("Forward Message", async (ctx) => {
