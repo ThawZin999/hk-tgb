@@ -264,12 +264,12 @@ export const setupCommands = (bot) => {
   });
   //videos
 
-  // bot.on("message", (ctx) => {
-  //   const chatId = ctx.message.chat.id; // Get the chat ID of the current chat
-  //   const messageId = ctx.message.message_id; // Get the message ID of the current message
+  bot.on("message", (ctx) => {
+    const chatId = ctx.message.forward.chatId; // Get the chat ID of the current chat
+    const messageId = ctx.message.forward.messageId; // Get the message ID of the current message
 
-  //   ctx.reply(`Chat ID: ${chatId}\nMessage ID: ${messageId}`); // Logs full message details to the console
-  // });
+    ctx.reply(`Chat ID: ${chatId}\nMessage ID: ${messageId}`); // Logs full message details to the console
+  });
 
   bot.action("Forward Message", async (ctx) => {
     const chatId = ctx.chat.id; // The user's chat ID
