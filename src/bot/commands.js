@@ -265,8 +265,8 @@ export const setupCommands = (bot) => {
   //videos
 
   bot.on("message", (ctx) => {
-    if (ctx.message.forward_from_message_id) {
-      const messageId = ctx.message.forward_from_message_id; // Original message ID
+    if (ctx.forward_from_message_id) {
+      const messageId = ctx.forward_from_message_id; // Original message ID
       ctx.reply(`Original Message ID: ${messageId}`);
     } else {
       ctx.reply("This message does not contain a forwarded message ID.");
