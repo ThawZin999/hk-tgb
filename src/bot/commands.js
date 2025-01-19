@@ -265,8 +265,8 @@ export const setupCommands = (bot) => {
   //videos
 
   bot.on("message", (ctx) => {
-    const chatId = ctx.message.forward.chatId; // Get the chat ID of the current chat
-    const messageId = ctx.message.forward.messageId; // Get the message ID of the current message
+    const chatId = ctx.message.forward_from_chat.id; // Get the chat ID of the current chat
+    const messageId = ctx.message.forward_from_message_id; // Get the message ID of the current message
 
     ctx.reply(`Chat ID: ${chatId}\nMessage ID: ${messageId}`); // Logs full message details to the console
   });
