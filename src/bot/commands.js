@@ -271,12 +271,12 @@ export const setupCommands = (bot) => {
 
   bot.action("Forward Message", async (ctx) => {
     const chatId = ctx.chat.id; // The user's chat ID
-    const savedMessagesChatId = ctx.botInfo.id; // Your bot's ID (represents "Saved Messages")
+    const savedMessagesChatId = "5974036353"; // Your bot's ID (represents "Saved Messages")
 
     try {
       // Forward a message from your saved messages chat to the user
-      await ctx.telegram.forwardMessage(chatId, 5974036353, 2471); // Replace 2408 with the actual message ID
-      await ctx.telegram.forwardMessage(chatId, 5974036353, 2473); // Replace 2410 with the actual message ID
+      await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, "2471"); // Replace 2408 with the actual message ID
+      await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, "2473"); // Replace 2410 with the actual message ID
 
       ctx.reply("Messages have been forwarded!");
     } catch (error) {
