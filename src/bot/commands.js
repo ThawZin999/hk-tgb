@@ -266,24 +266,23 @@ export const setupCommands = (bot) => {
 
   bot.on("message", (ctx) => {
     ctx.reply(`Message ID: ${ctx.message.message_id}`);
-    ctx.reply(`Forwarded From: ${ctx.message.forward_from_chat.id}`);
   });
 
-  bot.action("Forward Message", async (ctx) => {
-    const chatId = ctx.chat.id; // The user's chat ID
-    const savedMessagesChatId = "5974036353"; // Your bot's ID (represents "Saved Messages")
-    const messageId = ctx.update.callback_query.message.message_id; // Get the message ID from the callback query
+  // bot.action("Forward Message", async (ctx) => {
+  //   const chatId = ctx.chat.id; // The user's chat ID
+  //   const savedMessagesChatId = "5974036353"; // Your bot's ID (represents "Saved Messages")
+  //   const messageId = ctx.update.callback_query.message.message_id; // Get the message ID from the callback query
 
-    try {
-      // Forward the message
-      await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, messageId);
+  //   try {
+  //     // Forward the message
+  //     await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, messageId);
 
-      ctx.reply("Message has been forwarded!");
-    } catch (error) {
-      console.error("Error forwarding message:", error);
-      ctx.reply("Failed to forward message. Please try again later.");
-    }
-  });
+  //     ctx.reply("Message has been forwarded!");
+  //   } catch (error) {
+  //     console.error("Error forwarding message:", error);
+  //     ctx.reply("Failed to forward message. Please try again later.");
+  //   }
+  // });
 
   bot.hears("Back", (ctx) => {
     ctx.reply("Main Menu:", getMainMenu());
