@@ -264,32 +264,31 @@ export const setupCommands = (bot) => {
   });
   //videos
 
-  bot.on("channel_post", (ctx) => {
-    const channelId = ctx.chat.id; // Get Channel ID
-    const messageId = ctx.message.message_id; // Get Message ID
+  // bot.on("channel_post", (ctx) => {
+  //   const channelId = ctx.chat.id; // Get Channel ID
+  //   const messageId = ctx.message.message_id; // Get Message ID
 
-    ctx.telegram.sendMessage(
-      channelId,
-      `Channel ID: ${channelId}\nMessage ID: ${messageId}`
-    );
-    console.log(`Channel ID: ${channelId}, Message ID: ${messageId}`);
-  });
-
-  // bot.action("Forward Message", async (ctx) => {
-  //   const chatId = ctx.chat.id; // The user's chat ID
-  //   const savedMessagesChatId = "5974036353"; // Your bot's ID (represents "Saved Messages")
-  //   const messageId = ctx.update.callback_query.message.message_id; // Get the message ID from the callback query
-
-  //   try {
-  //     // Forward the message
-  //     await ctx.telegram.forwardMessage(chatId, savedMessagesChatId, messageId);
-
-  //     ctx.reply("Message has been forwarded!");
-  //   } catch (error) {
-  //     console.error("Error forwarding message:", error);
-  //     ctx.reply("Failed to forward message. Please try again later.");
-  //   }
+  //   ctx.telegram.sendMessage(
+  //     channelId,
+  //     `Channel ID: ${channelId}\nMessage ID: ${messageId}`
+  //   );
+  //   console.log(`Channel ID: ${channelId}, Message ID: ${messageId}`);
   // });
+
+  bot.action("Forward Message", async (ctx) => {
+    try {
+      await ctx.telegram.forwardMessage(
+        ctx.chat.id, // The chat ID of the user who clicked the button
+        -1002310710756, // Replace with your channel's chat ID (starts with -100)
+        3 // Message ID from your channel
+      );
+
+      await ctx.answerCbQuery(); // Acknowledge the button click
+    } catch (error) {
+      console.error("Error forwarding message:", error);
+      await ctx.reply("Sorry, I could not forward the message.");
+    }
+  });
 
   bot.hears("Back", (ctx) => {
     ctx.reply("Main Menu:", getMainMenu());
