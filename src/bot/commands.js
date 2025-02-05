@@ -21,7 +21,7 @@ const messages = [
 export const setupCommands = (bot) => {
   bot.start((ctx) => {
     ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။", getInlineKeyboard());
-    ctx.reply("Main Menu", getMainMenu());
+    ctx.replyWithMarkup(getMainMenu(), "Main Menu");
   });
 
   bot.hears("Menu", (ctx) => {
