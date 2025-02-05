@@ -275,20 +275,20 @@ export const setupCommands = (bot) => {
   //   console.log(`Channel ID: ${channelId}, Message ID: ${messageId}`);
   // });
 
-  // bot.hears("Forward Message", async (ctx) => {
-  //   try {
-  //     await ctx.telegram.forwardMessage(
-  //       ctx.chat.id, // The chat ID of the user who clicked the button
-  //       -1002310710756, // Replace with your channel's chat ID (starts with -100)
-  //       3 // Message ID from your channel
-  //     );
+  bot.hears("Forward Message", async (ctx) => {
+    try {
+      await ctx.telegram.forwardMessage(
+        ctx.chat.id, // The chat ID of the user who clicked the button
+        -1002310710756, // Replace with your channel's chat ID (starts with -100)
+        3 // Message ID from your channel
+      );
 
-  //     await ctx.answerCbQuery(); // Acknowledge the button click
-  //   } catch (error) {
-  //     console.error("Error forwarding message:", error);
-  //     await ctx.reply("Sorry, I could not forward the message.");
-  //   }
-  // });
+      await ctx.answerCbQuery(); // Acknowledge the button click
+    } catch (error) {
+      console.error("Error forwarding message:", error);
+      await ctx.reply("Sorry, I could not forward the message.");
+    }
+  });
 
   bot.hears("Back", (ctx) => {
     ctx.reply("Main Menu:", getMainMenu());

@@ -7,7 +7,7 @@ export const getMainMenu = () =>
     ["Fileများရယူရန်", "Multiple Messages"],
     ["Kotobaများကျက်ရန်"],
     ["Video သင်ခန်းစာများလေ့လာရန်"],
-    // ["Forward Message"],
+    ["Forward Message"],
   ])
     .resize()
     .oneTime(false);
