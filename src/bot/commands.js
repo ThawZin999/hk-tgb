@@ -264,8 +264,15 @@ export const setupCommands = (bot) => {
   });
   //videos
 
-  bot.on("message", (ctx) => {
-    ctx.reply(`Message ID: ${ctx.message.message_id}`);
+  bot.on("channel_post", (ctx) => {
+    const channelId = ctx.chat.id; // Get Channel ID
+    const messageId = ctx.message.message_id; // Get Message ID
+
+    ctx.telegram.sendMessage(
+      channelId,
+      `Channel ID: ${channelId}\nMessage ID: ${messageId}`
+    );
+    console.log(`Channel ID: ${channelId}, Message ID: ${messageId}`);
   });
 
   // bot.action("Forward Message", async (ctx) => {
