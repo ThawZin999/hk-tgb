@@ -275,7 +275,7 @@ export const setupCommands = (bot) => {
   //   console.log(`Channel ID: ${channelId}, Message ID: ${messageId}`);
   // });
 
-  bot.action("Forward Message", async (ctx) => {
+  bot.hears("Forward Message", async (ctx) => {
     try {
       await ctx.telegram.forwardMessage(
         ctx.chat.id, // The chat ID of the user who clicked the button
