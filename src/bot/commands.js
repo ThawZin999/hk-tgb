@@ -277,13 +277,11 @@ export const setupCommands = (bot) => {
 
   bot.hears("Forward Message", async (ctx) => {
     try {
-      await ctx.telegram.forwardMessage(
+      await ctx.telegram.copyMessage(
         ctx.chat.id, // The chat ID of the user who clicked the button
         -1002310710756, // Replace with your channel's chat ID (starts with -100)
         3 // Message ID from your channel
       );
-
-      await ctx.answerCbQuery(); // Acknowledge the button click
     } catch (error) {
       console.error("Error forwarding message:", error);
       await ctx.reply("Sorry, I could not forward the message.");
