@@ -12,3 +12,4 @@ export const setupWebhook = async (bot) => {
     console.error("Error setting webhook:", error);
   }
 };
+//vercel domain updated
