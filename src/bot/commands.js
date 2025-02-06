@@ -39,8 +39,12 @@ export const setupCommands = (bot) => {
   // Menu 1 handler
   bot.hears("Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", (ctx) => {
     ctx.reply(
-      "You selected Menu 1! Here are your options:",
-      Markup.keyboard([["Option 1.1", "Option 1.2"], ["Back"]])
+      "Choose the level:",
+      Markup.keyboard([
+        ["N5 Books", "N4 Books"],
+        ["N3 Books", "N2 Books"],
+        ["Back"],
+      ])
         .resize()
         .oneTime(false)
     );
@@ -240,7 +244,7 @@ export const setupCommands = (bot) => {
   //   console.log(`Channel ID: ${channelId}, Message ID: ${messageId}`);
   // });
 
-  bot.hears("Forward Message", async (ctx) => {
+  bot.hears("N5 Books", async (ctx) => {
     const messageIds = [3, 4, 5]; // List of message IDs to copy
     const channelId = -1002310710756; // Your channel's chat ID
 
