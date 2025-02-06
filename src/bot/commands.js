@@ -241,12 +241,13 @@ export const setupCommands = (bot) => {
   // });
 
   bot.hears("Forward Message", async (ctx) => {
+    const messageIds = [3, 4, 5]; // List of message IDs to copy
+    const channelId = -1002310710756; // Your channel's chat ID
+
     try {
-      await ctx.telegram.copyMessage(
-        ctx.chat.id, // The chat ID of the user who clicked the button
-        -1002310710756, // Replace with your channel's chat ID (starts with -100)
-        3 // Message ID from your channel
-      );
+      for (const messageId of messageIds) {
+        await ctx.telegram.copyMessage(ctx.chat.id, channelId, messageId);
+      }
     } catch (error) {
       console.error("Error forwarding message:", error);
       await ctx.reply("Sorry, I could not forward the message.");
