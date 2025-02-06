@@ -10,30 +10,10 @@ function removePipes(text) {
   return text.replace(/\|\|/g, "");
 }
 
-// const messages = [
-//   "Hello, this is message 1!",
-//   "Greetings from message 2!",
-//   "Here’s a random message for you: message 3!",
-//   "Message 4: Enjoy your day!",
-//   "Message 5: Stay awesome!",
-// ];
-
 export const setupCommands = (bot) => {
   bot.start((ctx) => {
     ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။", getInlineKeyboard());
     ctx.reply("Main Menu", getMainMenu());
-  });
-
-  bot.hears("Menu", (ctx) => {
-    ctx.reply("Choose a category:", {
-      reply_markup: {
-        inline_keyboard: [
-          [{ text: "Appetizers", callback_data: "category_appetizers" }],
-          [{ text: "Main Courses", callback_data: "category_main_courses" }],
-          [{ text: "Desserts", callback_data: "category_desserts" }],
-        ],
-      },
-    });
   });
 
   // Menu 1 handler
@@ -110,22 +90,6 @@ export const setupCommands = (bot) => {
   });
   //Files
 
-  bot.hears("Multiple Messages", async (ctx) => {
-    try {
-      await ctx.reply("Message 1: Hello, this is the first message!");
-      await ctx.reply("Message 2: Here’s some more information.");
-      await ctx.reply("Message 3: Let me know if you have questions.");
-    } catch (error) {
-      console.error("Error sending multiple messages:", error);
-      ctx.reply("Sorry, I could not send all the messages.");
-    }
-  });
-
-  bot.hears("Random Message", (ctx) => {
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    ctx.reply(randomMessage);
-  });
-
   //kotoba
   bot.hears("Kotobaများကျက်ရန်", (ctx) => {
     ctx.reply(
@@ -171,6 +135,8 @@ export const setupCommands = (bot) => {
         ["N5 25", "N5 25 Quiz"],
         ["Back"],
       ])
+        .resize()
+        .oneTime(false)
     );
   });
 
@@ -232,17 +198,6 @@ export const setupCommands = (bot) => {
     );
   });
   //videos
-
-  // bot.on("channel_post", (ctx) => {
-  //   const channelId = ctx.chat.id; // Get Channel ID
-  //   const messageId = ctx.message.message_id; // Get Message ID
-
-  //   ctx.telegram.sendMessage(
-  //     channelId,
-  //     `Channel ID: ${channelId}\nMessage ID: ${messageId}`
-  //   );
-  //   console.log(`Channel ID: ${channelId}, Message ID: ${messageId}`);
-  // });
 
   bot.hears("N5 Books", async (ctx) => {
     const messageIds = [3, 4, 6, 8, 9, 10]; // List of message IDs to copy
