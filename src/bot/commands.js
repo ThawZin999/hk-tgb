@@ -259,7 +259,7 @@ export const setupCommands = (bot) => {
   });
 
   bot.hears("N4 Books", async (ctx) => {
-    const messageIds = [16, 18, 20, 22, 24]; // List of message IDs to copy
+    const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
     const channelId = -1002310710756; // Your channel's chat ID
 
     try {
