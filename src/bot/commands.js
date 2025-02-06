@@ -122,6 +122,7 @@ export const setupCommands = (bot) => {
     ctx.reply(randomMessage);
   });
 
+  //kotoba
   bot.hears("Kotobaများကျက်ရန်", (ctx) => {
     ctx.reply(
       "Level ရွေးချယ်ပါ",
@@ -192,43 +193,7 @@ export const setupCommands = (bot) => {
     const escapedMessage = escapeMarkdownV2(randomN5Kotoba);
     ctx.replyWithMarkdownV2(escapedMessage);
   });
-
-  //Videos
-  // bot.hears("Video သင်ခန်းစာများလေ့လာရန်", (ctx) => {
-  //   ctx.reply(
-  //     "Video Lessons",
-  //     Markup.keyboard([
-  //       ["တိုခုတေး စားသောက်ဆိုင်"],
-  //       ["N2 Shinkanzen Goi(Part 2)"],
-  //       ["ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)"],
-  //       ["N4 Reading", "Back"],
-  //     ])
-  //       .resize()
-  //       .oneTime(false)
-  //   );
-  // });
-
-  // bot.hears("N2 Shinkanzen Goi(Part 2)", (ctx) => {
-  //   ctx.reply(
-  //     "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
-  //   );
-  // });
-  // bot.hears("ဂျပန်စာအခြေခံသင်ခန်းစာများ(N5)", (ctx) => {
-  //   ctx.reply(
-  //     "https://youtube.com/playlist?list=PL52UIvGzlVBrMNAH3oUCA_zPi4bZaq8Jj&si=LnttWTuJ6VNo9Cth"
-  //   );
-  // });
-  // bot.hears("တိုခုတေး စားသောက်ဆိုင်", (ctx) => {
-  //   ctx.reply(
-  //     "https://youtube.com/playlist?list=PL52UIvGzlVBrzzVU8fhd_naMvGW1yObCP&si=ul48RC_uCSJpOdor"
-  //   );
-  // });
-  // bot.hears("N4 Reading", (ctx) => {
-  //   ctx.reply(
-  //     "https://youtube.com/playlist?list=PL52UIvGzlVBrIPgdHLnbjCfUgc3jnMvzj&si=K8SJZelhM9y6LbfW"
-  //   );
-  // });
-  //Videos
+  //kotoba
 
   //videos
   bot.hears("Video သင်ခန်းစာများလေ့လာရန်", (ctx) => {
