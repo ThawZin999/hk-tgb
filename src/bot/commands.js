@@ -10,13 +10,13 @@ function removePipes(text) {
   return text.replace(/\|\|/g, "");
 }
 
-const messages = [
-  "Hello, this is message 1!",
-  "Greetings from message 2!",
-  "Here’s a random message for you: message 3!",
-  "Message 4: Enjoy your day!",
-  "Message 5: Stay awesome!",
-];
+// const messages = [
+//   "Hello, this is message 1!",
+//   "Greetings from message 2!",
+//   "Here’s a random message for you: message 3!",
+//   "Message 4: Enjoy your day!",
+//   "Message 5: Stay awesome!",
+// ];
 
 export const setupCommands = (bot) => {
   bot.start((ctx) => {
