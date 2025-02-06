@@ -12,8 +12,8 @@ function removePipes(text) {
 
 export const setupCommands = (bot) => {
   bot.start((ctx) => {
-    ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။", getInlineKeyboard());
     ctx.reply("Main Menu", getMainMenu());
+    ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။", getInlineKeyboard());
   });
 
   // Menu 1 handler
