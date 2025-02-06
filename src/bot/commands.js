@@ -258,6 +258,20 @@ export const setupCommands = (bot) => {
     }
   });
 
+  bot.hears("N4 Books", async (ctx) => {
+    const messageIds = [16, 18]; // List of message IDs to copy
+    const channelId = -1002310710756; // Your channel's chat ID
+
+    try {
+      for (const messageId of messageIds) {
+        await ctx.telegram.copyMessage(ctx.chat.id, channelId, messageId);
+      }
+    } catch (error) {
+      console.error("Error forwarding message:", error);
+      await ctx.reply("Sorry, I could not forward the message.");
+    }
+  });
+
   bot.hears("Back", (ctx) => {
     ctx.reply("Main Menu:", getMainMenu());
   });
