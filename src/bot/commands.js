@@ -119,7 +119,7 @@ export const setupCommands = (bot) => {
   });
 
   const n5MessageIds = {
-    "N5 1": 11,
+    "N5 1": 21,
     "N5 2": 102,
     "N5 3": 103,
     "N5 4": 104,
