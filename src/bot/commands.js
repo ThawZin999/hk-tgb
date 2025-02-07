@@ -16,7 +16,7 @@ export const setupCommands = (bot) => {
     ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။", getInlineKeyboard());
   });
 
-  // Menu 1 handler
+  // Book handler
   bot.hears("Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ", (ctx) => {
     ctx.reply(
       "Choose the level:",
