@@ -141,7 +141,7 @@ export const setupCommands = (bot) => {
       const groupId = -1002250750536; // Your group's chat ID
       try {
         // Corrected parameter order
-        await ctx.telegram.forwardMessage(ctx.chat.id, groupId, messageId);
+        await ctx.telegram.copyMessage(ctx.chat.id, groupId, messageId);
       } catch (error) {
         console.error("Error forwarding message:", error);
         await ctx.reply("Sorry, I could not forward the message.");
