@@ -119,7 +119,7 @@ export const setupCommands = (bot) => {
   });
 
   const n5MessageIds = {
-    "N5 1": 16,
+    "N5 1": 11,
     "N5 2": 102,
     "N5 3": 103,
     "N5 4": 104,
@@ -149,13 +149,9 @@ export const setupCommands = (bot) => {
   Object.keys(n5MessageIds).forEach((key) => {
     bot.hears(key, async (ctx) => {
       const messageId = n5MessageIds[key];
-      const channelId = -1002310710756; // Your channel's chat ID
+      const channelId = -1002250750536; // Your channel's chat ID
       try {
-        await ctx.telegram.bot.forwardMessage(
-          ctx.chat.id,
-          channelId,
-          messageId
-        );
+        await ctx.telegram.forwardMessage(ctx.chat.id, channelId, messageId);
       } catch (error) {
         console.error("Error forwarding message:", error);
         await ctx.reply("Sorry, I could not forward the message.");
