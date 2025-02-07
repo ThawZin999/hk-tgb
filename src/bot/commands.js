@@ -101,17 +101,6 @@ export const setupCommands = (bot) => {
       Markup.keyboard([
         ["N5 1", "N5 2"],
         ["N5 3", "N5 4"],
-        ["N5 5", "N5 6"],
-        ["N5 7", "N5 8"],
-        ["N5 9", "N5 10"],
-        ["N5 11", "N5 12"],
-        ["N5 13", "N5 14"],
-        ["N5 15", "N5 16"],
-        ["N5 17", "N5 18"],
-        ["N5 19", "N5 20"],
-        ["N5 21", "N5 22"],
-        ["N5 23", "N5 24"],
-        ["N5 25", "Back"],
       ])
         .resize()
         .oneTime(false)
@@ -119,40 +108,19 @@ export const setupCommands = (bot) => {
   });
 
   const n5MessageIds = {
-    "N5 1": 13,
-    "N5 2": 102,
-    "N5 3": 103,
-    "N5 4": 104,
-    "N5 5": 105,
-    "N5 6": 106,
-    "N5 7": 107,
-    "N5 8": 108,
-    "N5 9": 109,
-    "N5 10": 110,
-    "N5 11": 111,
-    "N5 12": 112,
-    "N5 13": 113,
-    "N5 14": 114,
-    "N5 15": 115,
-    "N5 16": 116,
-    "N5 17": 117,
-    "N5 18": 118,
-    "N5 19": 119,
-    "N5 20": 120,
-    "N5 21": 121,
-    "N5 22": 122,
-    "N5 23": 123,
-    "N5 24": 124,
-    "N5 25": 125,
+    "N5 1": 3,
+    "N5 2": 4,
+    "N5 3": 6,
+    "N5 4": 8,
   };
 
   Object.keys(n5MessageIds).forEach((key) => {
     bot.hears(key, async (ctx) => {
       const messageId = n5MessageIds[key];
-      const groupId = -1002250750536; // Your group's chat ID
+      const channelId = -1002310710756; // Your channel's chat ID
+
       try {
-        // Corrected parameter order
-        await ctx.telegram.forwardMessage(ctx.chat.id, groupId, messageId);
+        await ctx.telegram.forwardMessage(ctx.chat.id, channelId, messageId);
       } catch (error) {
         console.error("Error forwarding message:", error);
         await ctx.reply("Sorry, I could not forward the message.");
