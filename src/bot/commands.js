@@ -9,7 +9,8 @@ export const setupCommands = (bot) => {
 
   // books
   // Function to handle forwarding messages and replying with inline keyboard
-  const handleBooks = async (ctx, messageIds, channelId) => {
+  const handleBooks = async (ctx, messageIds) => {
+    const channelId = -1002310710756; // Your channel's chat ID
     try {
       for (const messageId of messageIds) {
         await ctx.telegram.copyMessage(ctx.chat.id, channelId, messageId);
@@ -43,32 +44,27 @@ export const setupCommands = (bot) => {
 
   bot.hears("N5 Books", async (ctx) => {
     const messageIds = [3, 4, 6, 8, 9, 10]; // List of message IDs to copy
-    const channelId = -1002310710756; // Your channel's chat ID
-    await handleBooks(ctx, messageIds, channelId);
+    await handleBooks(ctx, messageIds);
   });
 
   bot.hears("N4 Books", async (ctx) => {
     const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
-    const channelId = -1002310710756; // Your channel's chat ID
-    await handleBooks(ctx, messageIds, channelId);
+    await handleBooks(ctx, messageIds);
   });
 
   bot.hears("N3 Books", async (ctx) => {
     const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
-    const channelId = -1002310710756; // Your channel's chat ID
-    await handleBooks(ctx, messageIds, channelId);
+    await handleBooks(ctx, messageIds);
   });
 
   bot.hears("N2 Books", async (ctx) => {
     const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
-    const channelId = -1002310710756; // Your channel's chat ID
-    await handleBooks(ctx, messageIds, channelId);
+    await handleBooks(ctx, messageIds);
   });
 
   bot.hears("General Books", async (ctx) => {
     const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
-    const channelId = -1002310710756; // Your channel's chat ID
-    await handleBooks(ctx, messageIds, channelId);
+    await handleBooks(ctx, messageIds);
   });
   //books
 
