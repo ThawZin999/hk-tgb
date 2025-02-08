@@ -123,7 +123,7 @@ export const setupCommands = (bot) => {
     "N5 6": 33,
     "N5 7": 35,
     "N5 8": 37,
-    "N5 9": 109,
+    "N5 9": 47,
     "N5 10": 110,
     "N5 11": 111,
     "N5 12": 112,
@@ -193,7 +193,7 @@ export const setupCommands = (bot) => {
   //videos
 
   bot.hears("N5 Books", async (ctx) => {
-    const messageIds = [3, 4, 6, 8, 9, 10]; // List of message IDs to copy
+    const messageIds = [3, 4, 6, 8, 9, 10, 29]; // List of message IDs to copy
     const channelId = -1002310710756; // Your channel's chat ID
 
     try {
@@ -207,7 +207,7 @@ export const setupCommands = (bot) => {
   });
 
   bot.hears("N4 Books", async (ctx) => {
-    const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
+    const messageIds = [16, 18, 20, 22, 26, 24, 29]; // List of message IDs to copy
     const channelId = -1002310710756; // Your channel's chat ID
 
     try {
