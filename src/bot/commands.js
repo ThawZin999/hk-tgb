@@ -200,6 +200,12 @@ export const setupCommands = (bot) => {
       for (const messageId of messageIds) {
         await ctx.telegram.copyMessage(ctx.chat.id, channelId, messageId);
       }
+      await ctx.reply(
+        "စာအုပ်ဝယ်ယူရန်အတွက် ဝယ်ယူမည့်စာအုပ်၏ codeကိုမှတ်ပြီး Adminနှင့်တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါတယ်ခင်ဗျာ👇",
+        Markup.inlineKeyboard([
+          Markup.button.url("Admin နှင့်ဆက်သွယ်မည်", "https://t.me/hikarujls"),
+        ])
+      );
     } catch (error) {
       console.error("Error forwarding message:", error);
       await ctx.reply("Sorry, I could not forward the message.");
@@ -214,6 +220,12 @@ export const setupCommands = (bot) => {
       for (const messageId of messageIds) {
         await ctx.telegram.copyMessage(ctx.chat.id, channelId, messageId);
       }
+      await ctx.reply(
+        "စာအုပ်ဝယ်ယူရန်အတွက် ဝယ်ယူမည့်စာအုပ်၏ codeကိုမှတ်ပြီး Adminနှင့်တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါတယ်ခင်ဗျာ👇",
+        Markup.inlineKeyboard([
+          Markup.button.url("Admin နှင့်ဆက်သွယ်မည်", "https://t.me/hikarujls"),
+        ])
+      );
     } catch (error) {
       console.error("Error forwarding message:", error);
       await ctx.reply("Sorry, I could not forward the message.");
