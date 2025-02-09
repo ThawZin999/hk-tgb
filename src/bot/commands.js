@@ -2,9 +2,12 @@ import { getMainMenu, getInlineKeyboard } from "./menus.js";
 import { Markup } from "telegraf";
 
 export const setupCommands = (bot) => {
-  bot.start((ctx) => {
-    ctx.reply("Main Menu", getMainMenu());
-    ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။", getInlineKeyboard());
+  bot.start(async (ctx) => {
+    await ctx.reply(
+      "မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။",
+      getInlineKeyboard()
+    );
+    await ctx.reply("Main Menu", getMainMenu());
   });
 
   // books
@@ -171,13 +174,13 @@ export const setupCommands = (bot) => {
     "N5 7": 35,
     "N5 8": 37,
     "N5 9": 47,
-    "N5 10": 110,
-    "N5 11": 111,
-    "N5 12": 112,
-    "N5 13": 113,
-    "N5 14": 114,
-    "N5 15": 115,
-    "N5 16": 116,
+    "N5 10": 49,
+    "N5 11": 51,
+    "N5 12": 53,
+    "N5 13": 55,
+    "N5 14": 57,
+    "N5 15": 59,
+    "N5 16": 61,
     "N5 17": 117,
     "N5 18": 118,
     "N5 19": 119,
