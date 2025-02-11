@@ -23,7 +23,7 @@ app.post("/webhook", async (req, res) => {
 export default app;
 
 // Only start the server if this file is executed directly
-if (process.argv[1].endswith(import.meta.url.slice(7))) {
+if (process.argv[1].endsWith(import.meta.url.slice(7))) {
   app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
   });
