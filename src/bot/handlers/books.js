@@ -35,27 +35,27 @@ export const setupBookHandlers = (bot) => {
   });
 
   bot.hears("N5 Books", async (ctx) => {
-    const messageIds = [3, 4, 6, 8, 9, 10]; // List of message IDs to copy
+    const messageIds = [44, 46, 48, 50, 52, 54, 110]; // List of message IDs to copy
     await handleBooks(ctx, messageIds);
   });
 
   bot.hears("N4 Books", async (ctx) => {
-    const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
+    const messageIds = [56, 58, 60, 62, 64, 66, 98, 106, 108]; // List of message IDs to copy
     await handleBooks(ctx, messageIds);
   });
 
   bot.hears("N3 Books", async (ctx) => {
-    const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
+    const messageIds = [68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88]; // List of message IDs to copy
     await handleBooks(ctx, messageIds);
   });
 
   bot.hears("N2 Books", async (ctx) => {
-    const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
+    const messageIds = [94, 96]; // List of message IDs to copy
     await handleBooks(ctx, messageIds);
   });
 
   bot.hears("General Books", async (ctx) => {
-    const messageIds = [16, 18, 20, 22, 26, 24]; // List of message IDs to copy
+    const messageIds = [100, 102, 104]; // List of message IDs to copy
     await handleBooks(ctx, messageIds);
   });
 };

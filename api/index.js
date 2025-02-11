@@ -1,7 +1,6 @@
 import express from "express";
 import { Telegraf } from "telegraf";
 import { setupCommands } from "../src/bot/commands.js";
-import { setupHandlers } from "../src/bot/handlers.js";
 import { BOT_TOKEN, PORT } from "../src/config.js";
 
 const app = express();
@@ -24,12 +23,11 @@ app.post("/webhook", async (req, res) => {
 export default app;
 
 // Only start the server if this file is executed directly
-if (process.argv[1].endsWith(import.meta.url.slice(7))) {
+if (process.argv[1].endswith(import.meta.url.slice(7))) {
   app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
   });
 }
 
-// Setup commands and handlers
+// Setup commands
 setupCommands(bot);
-setupHandlers(bot);
