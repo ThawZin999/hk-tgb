@@ -1,11 +1,11 @@
 import { Markup } from "telegraf";
 
-const channelId = -1002310710756; // Your channel's chat ID
+const groupId = -1002476040515; // Your group's chat ID
 
 const handleBooks = async (ctx, messageIds) => {
   try {
     for (const messageId of messageIds) {
-      await ctx.telegram.copyMessage(ctx.chat.id, channelId, messageId);
+      await ctx.telegram.copyMessage(ctx.chat.id, groupId, messageId);
     }
     await ctx.reply(
       "အချို့စာအုပ်များကိုဂိုဒေါင်ရှင်းအထူးလျှော့ဈေးဖြင့်ပေးထားပါတယ်။\nစာအုပ်ဝယ်ယူရန်အတွက် ဝယ်ယူမည့်စာအုပ်၏ codeကိုမှတ်ပြီး Adminနှင့်တိုက်ရိုက်ဆက်သွယ်မှာယူနိုင်ပါတယ်ခင်ဗျာ👇",
