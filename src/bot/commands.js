@@ -123,12 +123,14 @@ export const setupCommands = (bot) => {
             "Facebook Page",
             "https://www.facebook.com/hikarujapaneseschool"
           ),
+        ],
+        [
           Markup.button.url(
             "YouTube Channel",
             "https://youtube.com/@hikarujls?si=Kh-rPwOAgCYUWWNQ"
           ),
         ],
-        [Markup.button.url("Telegram Account", "https://t.me/hikarujls")],
+        [Markup.button.url("Telegram", "https://t.me/hikarujls")],
       ])
     );
   });
