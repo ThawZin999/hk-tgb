@@ -113,6 +113,26 @@ export const setupCommands = (bot) => {
   });
   //videos
 
+  // Contact command
+  bot.command("contact", (ctx) => {
+    ctx.reply(
+      "Contact Us:",
+      Markup.inlineKeyboard([
+        [
+          Markup.button.url(
+            "Facebook Page",
+            "https://www.facebook.com/hikarujapaneseschool"
+          ),
+          Markup.button.url(
+            "YouTube Channel",
+            "https://youtube.com/@hikarujls?si=Kh-rPwOAgCYUWWNQ"
+          ),
+        ],
+        [Markup.button.url("Telegram Account", "https://t.me/hikarujls")],
+      ])
+    );
+  });
+
   bot.hears("Back", (ctx) => {
     ctx.reply("Main Menu:", getMainMenu());
   });

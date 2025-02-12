@@ -20,7 +20,7 @@ const handleClasses = async (ctx, messageIds) => {
 };
 
 export const setupVdclassesHandlers = (bot) => {
-  bot.hears("သင်တန်းအကြောင်းလေ့လာရန်", (ctx) => {
+  bot.hears("သင်တန်းများအကြောင်း", (ctx) => {
     ctx.reply(
       "Choose the level:",
       Markup.keyboard([
