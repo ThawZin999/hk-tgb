@@ -2,7 +2,7 @@ import { Markup } from "telegraf";
 
 const groupId = -1002476040515; // Your group's chat ID
 
-const handleBooks = async (ctx, messageIds) => {
+const handleClasses = async (ctx, messageIds) => {
   try {
     for (const messageId of messageIds) {
       await ctx.telegram.copyMessage(ctx.chat.id, groupId, messageId);
@@ -35,27 +35,27 @@ export const setupVdclassesHandlers = (bot) => {
   });
 
   bot.hears("Basic+N5 Class", async (ctx) => {
-    const messageIds = 116; // List of message IDs to copy
-    await handleBooks(ctx, messageIds);
+    const messageIds = [116]; // List of message IDs to copy
+    await handleClasses(ctx, messageIds);
   });
 
   bot.hears("N4 Class", async (ctx) => {
-    const messageIds = 116; // List of message IDs to copy
-    await handleBooks(ctx, messageIds);
+    const messageIds = [116]; // List of message IDs to copy
+    await handleClasses(ctx, messageIds);
   });
 
   bot.hears("N3 Class", async (ctx) => {
-    const messageIds = 116; // List of message IDs to copy
-    await handleBooks(ctx, messageIds);
+    const messageIds = [116]; // List of message IDs to copy
+    await handleClasses(ctx, messageIds);
   });
 
   bot.hears("N2 Class", async (ctx) => {
-    const messageIds = 116; // List of message IDs to copy
-    await handleBooks(ctx, messageIds);
+    const messageIds = [116]; // List of message IDs to copy
+    await handleClasses(ctx, messageIds);
   });
 
   bot.hears("N1 Class", async (ctx) => {
-    const messageIds = 116; // List of message IDs to copy
-    await handleBooks(ctx, messageIds);
+    const messageIds = [116]; // List of message IDs to copy
+    await handleClasses(ctx, messageIds);
   });
 };
