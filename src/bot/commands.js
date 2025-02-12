@@ -5,9 +5,12 @@ import { setupKotobaHandlers } from "./handlers/kotoba.js";
 import { setupVdclassesHandlers } from "./handlers/vdclasses.js";
 
 export const setupCommands = (bot) => {
-  bot.start((ctx) => {
-    ctx.reply("Main Menu", getMainMenu());
-    ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ် ❤️", getInlineKeyboard());
+  bot.start(async (ctx) => {
+    await ctx.reply(
+      "မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ် ❤️",
+      getInlineKeyboard()
+    );
+    await ctx.reply("Main Menu", getMainMenu());
   });
 
   // Setup book handlers
