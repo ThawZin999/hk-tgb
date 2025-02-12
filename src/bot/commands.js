@@ -127,7 +127,7 @@ export const setupCommands = (bot) => {
         [
           Markup.button.url(
             "YouTube Channel",
-            "https://youtube.com/@hikarujls?si=Kh-rPwOAgCYUWWNQ"
+            "https://youtube.com/@hikarujls"
           ),
         ],
         [Markup.button.url("Telegram", "https://t.me/hikarujls")],
