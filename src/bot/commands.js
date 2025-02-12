@@ -7,7 +7,7 @@ import { setupVdclassesHandlers } from "./handlers/vdclasses.js";
 export const setupCommands = (bot) => {
   bot.start((ctx) => {
     ctx.reply("Main Menu", getMainMenu());
-    ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ်။", getInlineKeyboard());
+    ctx.reply("မင်္ဂလာပါ။ Hikaru Bot မှ ကြိုဆိုပါတယ် ❤️", getInlineKeyboard());
   });
 
   // Setup book handlers

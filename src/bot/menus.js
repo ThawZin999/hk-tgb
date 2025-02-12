@@ -12,16 +12,5 @@ export const getMainMenu = () =>
 
 export const getInlineKeyboard = () =>
   Markup.inlineKeyboard([
-    [
-      Markup.button.url(
-        "Admin နှင့်တိုက်ရိုက်စကားပြောမည်",
-        "https://t.me/hikarujls"
-      ),
-    ],
-    [
-      Markup.button.url(
-        "သင်တန်စုံစမ်းရန်",
-        "https://m.me/hikarujapaneseschool"
-      ),
-    ],
+    [Markup.button.url("Admin နှင့်ဆက်သွယ်မည်", "https://t.me/hikarujls")],
   ]);
