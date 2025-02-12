@@ -2,6 +2,7 @@ import { getMainMenu, getInlineKeyboard } from "./menus.js";
 import { Markup } from "telegraf";
 import { setupBookHandlers } from "./handlers/books.js";
 import { setupKotobaHandlers } from "./handlers/kotoba.js";
+import { setupVdclassesHandlers } from "./handlers/vdclasses.js";
 
 export const setupCommands = (bot) => {
   bot.start((ctx) => {
@@ -14,6 +15,9 @@ export const setupCommands = (bot) => {
 
   // Setup kotoba handlers
   setupKotobaHandlers(bot);
+
+  // Setup class handlers
+  setupVdclassesHandlers(bot);
 
   //Files
   bot.hears("Fileများရယူရန်", (ctx) => {
