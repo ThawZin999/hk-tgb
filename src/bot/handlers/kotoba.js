@@ -7,14 +7,16 @@ const handleKotoba = async (ctx, messageId) => {
     await ctx.telegram.copyMessage(ctx.chat.id, groupId, messageId);
   } catch (error) {
     console.error("Error forwarding message:", error);
-    await ctx.reply("Sorry, I could not forward the message.");
+    await ctx.reply(
+      "Error: လတ်တလောတွင် N5 Kotoba သာရနိုင်ပါမည်။ ဆက်လက်ထည့်သွင်းပေးသွားပါမည်။"
+    );
   }
 };
 
 export const setupKotobaHandlers = (bot) => {
   bot.hears("Kotobaများကျက်ရန်", (ctx) => {
     ctx.reply(
-      "Level ရွေးချယ်ပါ",
+      "Level ရွေးချယ်ပါ။ ",
       Markup.keyboard([
         ["N5 Kotoba", "N4 Kotoba"],
         ["N3 Kotoba", "N2 Kotoba"],
@@ -27,7 +29,7 @@ export const setupKotobaHandlers = (bot) => {
 
   bot.hears("N5 Kotoba", (ctx) => {
     ctx.reply(
-      "ဉပမာ-Unit 1 Kotobaကျက်ရန်အတွက်N5 1ကိုရွေးချယ်ပါ။ ",
+      "Example-Unit 1 Kotobaကျက်ရန်အတွက်N5 1ကိုရွေးချယ်ပါ။ ",
       Markup.keyboard([
         ["N5 1", "N5 2", "N5 3"],
         ["N5 4", "N5 5", "N5 6"],
@@ -79,57 +81,57 @@ export const setupKotobaHandlers = (bot) => {
     });
   });
 
-  bot.hears("N4 Kotoba", (ctx) => {
-    ctx.reply(
-      "ဉပမာ-Unit 1 Kotobaကျက်ရန်အတွက်N4 1ကိုရွေးချယ်ပါ။ ",
-      Markup.keyboard([
-        ["N4 1", "N4 2", "N4 3"],
-        ["N4 4", "N4 5", "N4 6"],
-        ["N4 7", "N4 8", "N4 9"],
-        ["N4 10", "N4 11", "N4 12"],
-        ["N4 13", "N4 14", "N4 15"],
-        ["N4 16", "N4 17", "N4 18"],
-        ["N4 19", "N4 20", "N4 21"],
-        ["N4 22", "N4 23", "N4 24"],
-        ["N4 25", "Back"],
-      ])
-        .resize()
-        .oneTime(false)
-    );
-  });
+  // bot.hears("N4 Kotoba", (ctx) => {
+  //   ctx.reply(
+  //     "ဉပမာ-Unit 1 Kotobaကျက်ရန်အတွက်N4 1ကိုရွေးချယ်ပါ။ ",
+  //     Markup.keyboard([
+  //       ["N4 1", "N4 2", "N4 3"],
+  //       ["N4 4", "N4 5", "N4 6"],
+  //       ["N4 7", "N4 8", "N4 9"],
+  //       ["N4 10", "N4 11", "N4 12"],
+  //       ["N4 13", "N4 14", "N4 15"],
+  //       ["N4 16", "N4 17", "N4 18"],
+  //       ["N4 19", "N4 20", "N4 21"],
+  //       ["N4 22", "N4 23", "N4 24"],
+  //       ["N4 25", "Back"],
+  //     ])
+  //       .resize()
+  //       .oneTime(false)
+  //   );
+  // });
 
-  const n4MessageIds = {
-    "N4 1": 11,
-    "N4 2": 25,
-    "N4 3": 27,
-    "N4 4": 29,
-    "N4 5": 31,
-    "N4 6": 33,
-    "N4 7": 35,
-    "N4 8": 37,
-    "N4 9": 47,
-    "N4 10": 110,
-    "N4 11": 111,
-    "N4 12": 112,
-    "N4 13": 113,
-    "N4 14": 114,
-    "N4 15": 115,
-    "N4 16": 116,
-    "N4 17": 117,
-    "N4 18": 118,
-    "N4 19": 119,
-    "N4 20": 120,
-    "N4 21": 121,
-    "N4 22": 122,
-    "N4 23": 123,
-    "N4 24": 124,
-    "N4 25": 125,
-  };
+  // const n4MessageIds = {
+  //   "N4 1": 11,
+  //   "N4 2": 25,
+  //   "N4 3": 27,
+  //   "N4 4": 29,
+  //   "N4 5": 31,
+  //   "N4 6": 33,
+  //   "N4 7": 35,
+  //   "N4 8": 37,
+  //   "N4 9": 47,
+  //   "N4 10": 49,
+  //   "N4 11": 51,
+  //   "N4 12": 53,
+  //   "N4 13": 55,
+  //   "N4 14": 57,
+  //   "N4 15": 59,
+  //   "N4 16": 61,
+  //   "N4 17": 63,
+  //   "N4 18": 65,
+  //   "N4 19": 67,
+  //   "N4 20": 69,
+  //   "N4 21": 71,
+  //   "N4 22": 73,
+  //   "N4 23": 75,
+  //   "N4 24": 77,
+  //   "N4 25": 79,
+  // };
 
-  Object.keys(n4MessageIds).forEach((key) => {
-    bot.hears(key, async (ctx) => {
-      const messageId = n4MessageIds[key];
-      await handleKotoba(ctx, messageId);
-    });
-  });
+  // Object.keys(n4MessageIds).forEach((key) => {
+  //   bot.hears(key, async (ctx) => {
+  //     const messageId = n4MessageIds[key];
+  //     await handleKotoba(ctx, messageId);
+  //   });
+  // });
 };
