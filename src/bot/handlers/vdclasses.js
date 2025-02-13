@@ -22,7 +22,7 @@ const handleClasses = async (ctx, messageIds) => {
 export const setupVdclassesHandlers = (bot) => {
   bot.hears("သင်တန်းများအကြောင်း", (ctx) => {
     ctx.reply(
-      "Level အလိုက်သင်ကြားပုံများအားကြည့်ရှုပါ",
+      "Level အလိုက်သင်ကြားမည့်စာအုပ်များနှင့်သင်ကြားပုံများအားကြည့်ရှုရန်ရွေးချယ်ပါ",
       Markup.keyboard([
         ["Basic+N5 Class"],
         ["N4 Class", "N3 Class"],
