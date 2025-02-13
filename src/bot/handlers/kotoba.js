@@ -7,7 +7,7 @@ const handleKotoba = async (ctx, messageId) => {
     await ctx.telegram.copyMessage(ctx.chat.id, groupId, messageId);
   } catch (error) {
     console.error("Error forwarding message:", error);
-    await ctx.reply("Sorry, I could not forward the message.");
+    await ctx.reply("Sorry, There is a error. 🙇🏻‍♂️");
   }
 };
 
