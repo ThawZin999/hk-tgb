@@ -50,12 +50,12 @@ export const setupVdclassesHandlers = (bot) => {
   });
 
   bot.hears("N2 Class", async (ctx) => {
-    const messageIds = [116]; // List of message IDs to copy
+    const messageIds = [122]; // List of message IDs to copy
     await handleClasses(ctx, messageIds);
   });
 
   bot.hears("N1 Class", async (ctx) => {
-    const messageIds = [116]; // List of message IDs to copy
+    const messageIds = [123]; // List of message IDs to copy
     await handleClasses(ctx, messageIds);
   });
 };
