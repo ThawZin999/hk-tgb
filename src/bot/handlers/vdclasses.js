@@ -20,7 +20,7 @@ const handleClasses = async (ctx, messageIds) => {
 };
 
 export const setupVdclassesHandlers = (bot) => {
-  bot.hears("သင်တန်းများအကြောင်း", (ctx) => {
+  bot.hears("သင်ကြားပုံများ", (ctx) => {
     ctx.reply(
       "Level အလိုက်သင်ကြားမည့်စာအုပ်များနှင့်သင်ကြားပုံများအားကြည့်ရှုရန်ရွေးချယ်ပါ",
       Markup.keyboard([
@@ -40,12 +40,12 @@ export const setupVdclassesHandlers = (bot) => {
   });
 
   bot.hears("N4 Class", async (ctx) => {
-    const messageIds = [116]; // List of message IDs to copy
+    const messageIds = [118]; // List of message IDs to copy
     await handleClasses(ctx, messageIds);
   });
 
   bot.hears("N3 Class", async (ctx) => {
-    const messageIds = [116]; // List of message IDs to copy
+    const messageIds = [120]; // List of message IDs to copy
     await handleClasses(ctx, messageIds);
   });
 
