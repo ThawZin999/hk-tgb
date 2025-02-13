@@ -2,9 +2,9 @@ import { Markup } from "telegraf";
 
 export const getMainMenu = () =>
   Markup.keyboard([
-    ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ"],
     ["Fileများရယူရန်", "Kotobaများကျက်ရန်"],
     ["Video သင်ခန်းစာများလေ့လာရန်"],
+    ["Hikaruမှ ဝယ်ယူနိုင်သည့်ဂျပန်စာအုပ်များ"],
     ["သင်ကြားပုံများ"],
   ])
     .resize()
