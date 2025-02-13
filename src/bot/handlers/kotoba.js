@@ -7,16 +7,14 @@ const handleKotoba = async (ctx, messageId) => {
     await ctx.telegram.copyMessage(ctx.chat.id, groupId, messageId);
   } catch (error) {
     console.error("Error forwarding message:", error);
-    await ctx.reply(
-      "Error: လတ်တလောတွင် N5 Kotoba သာရနိုင်ပါမည်။ ဆက်လက်ထည့်သွင်းပေးသွားပါမည်။"
-    );
+    await ctx.reply("Sorry, I could not forward the message.");
   }
 };
 
 export const setupKotobaHandlers = (bot) => {
   bot.hears("Kotobaများကျက်ရန်", (ctx) => {
     ctx.reply(
-      "Level ရွေးချယ်ပါ။ ",
+      "Level ရွေးချယ်ပါ။ လတ်တလောတွင် N5 Kotoba သာရနိုင်ပါမည်။ ဆက်လက်ထည့်သွင်းပေးသွားပါမည်။",
       Markup.keyboard([
         ["N5 Kotoba", "N4 Kotoba"],
         ["N3 Kotoba", "N2 Kotoba"],
