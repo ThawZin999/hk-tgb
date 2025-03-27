@@ -27,7 +27,7 @@ export const setupVdclassesHandlers = (bot) => {
         ["Basic+N5 Class"],
         ["N4 Class", "N3 Class"],
         ["N2 Class", "N1 Class"],
-        ["Back"],
+        ["Ads Video", "Back"],
       ])
         .resize()
         .oneTime(false)
@@ -56,6 +56,11 @@ export const setupVdclassesHandlers = (bot) => {
 
   bot.hears("N1 Class", async (ctx) => {
     const messageIds = [123]; // List of message IDs to copy
+    await handleClasses(ctx, messageIds);
+  });
+
+  bot.hears("Ads Video", async (ctx) => {
+    const messageIds = [127]; // List of message IDs to copy
     await handleClasses(ctx, messageIds);
   });
 };
