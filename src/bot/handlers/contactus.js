@@ -1,9 +1,9 @@
 import { Markup } from "telegraf";
 
-export const setupContactCommand = (bot) => {
+export const setupContactUsHandlers = (bot) => {
   bot.hears("ဆက်သွယ်ရန်", (ctx) => {
     ctx.reply(
-      "Contact Us:",
+      "Channels:",
       Markup.inlineKeyboard([
         [
           Markup.button.url(

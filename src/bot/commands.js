@@ -4,6 +4,7 @@ import { setupKotobaHandlers } from "./handlers/kotoba.js";
 import { setupVdclassesHandlers } from "./handlers/vdclasses.js";
 import { setupFileHandlers } from "./handlers/files.js";
 import { setupVideoHandlers } from "./handlers/videos.js";
+import { setupContactUsHandlers } from "./handlers/contactus.js";
 import { setupContactCommand } from "./handlers/contact.js";
 
 export const setupCommands = (bot) => {
@@ -21,6 +22,7 @@ export const setupCommands = (bot) => {
   setupVdclassesHandlers(bot);
   setupFileHandlers(bot);
   setupVideoHandlers(bot);
+  setupContactUsHandlers(bot);
   setupContactCommand(bot);
 
   bot.hears("Back", (ctx) => {
