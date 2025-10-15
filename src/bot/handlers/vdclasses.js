@@ -10,7 +10,7 @@ const handleClasses = async (ctx, messageIds) => {
     await ctx.reply(
       "သင်တန်းအပ်ရန် 📝👇",
       Markup.inlineKeyboard([
-        Markup.button.url("Admin နှင့်ဆက်သွယ်မည်", "https://t.me/hikarujls"),
+        Markup.button.url("Admin နှင့်ဆက်သွယ်မည်", "m.me/hikarujapaneseschool"),
       ])
     );
   } catch (error) {
