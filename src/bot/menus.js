@@ -4,6 +4,7 @@ export const getMainMenu = () =>
   Markup.keyboard([
     ["Fileများရယူရန်", "သင်ကြားပုံများ"],
     ["Video သင်ခန်းစာများလေ့လာရန်"],
+    ["ဆက်သွယ်ရန်"],
   ])
     .resize()
     .oneTime(false);
